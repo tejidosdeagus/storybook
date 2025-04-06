@@ -17,14 +17,16 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'variant'> {
   className?: string;
 }
 
-const StyledButton = styled(MuiButton)(() => ({
+const StyledButton = styled(MuiButton)(({  }) => ({
   textTransform: 'none',
   padding: '16px 24px',
-  borderRadius: '8px',
+  borderRadius: '9px',
   fontWeight: 600,
-  fontSize: '16px',
-  lineHeight: 1,
+  fontSize: '18px',
+  lineHeight: 1.2,
+  letterSpacing: '-0.02em',
   transition: 'all 0.2s ease-in-out',
+  height: '60px',
   '&:hover': {
     opacity: 0.9,
   },
@@ -57,6 +59,7 @@ export const Button = ({
   children,
   variant = 'primary',
   className = '',
+  size = 'medium',
   ...props
 }: ButtonProps) => {
   return (

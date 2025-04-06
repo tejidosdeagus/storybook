@@ -13,10 +13,7 @@ const meta = {
       control: 'select',
       options: ['primary', 'secondary'],
     },
-    size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-    },
+   
     fullWidth: {
       control: 'boolean',
     },
@@ -29,38 +26,14 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    children: 'Botón grande',
+    children: 'BLOG',
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'Botón grande',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    variant: 'primary',
-    size: 'small',
-    children: 'Botón pequeño',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    variant: 'primary',
-    size: 'large',
-    children: 'Botón grande',
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    variant: 'primary',
-    fullWidth: true,
-    children: 'Botón ancho completo',
+    children: 'VER MAS PRODUCTOS',
   },
 };
 
