@@ -17,7 +17,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'variant'> {
   className?: string;
 }
 
-const StyledButton = styled(MuiButton)(({ theme }) => ({
+const StyledButton = styled(MuiButton)(() => ({
   textTransform: 'none',
   padding: '16px 24px',
   borderRadius: '8px',
