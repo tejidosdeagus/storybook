@@ -1,0 +1,22 @@
+.button {
+  font-family: inherit;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button--primary {
+  background-color: #D4AF80;
+  color: #4A4A4A;
+}
+
+.button--secondary {
+  background-color: #6D8B74;
+  color: #F3E5D8;
+} 
