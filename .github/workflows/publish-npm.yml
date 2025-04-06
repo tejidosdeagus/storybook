@@ -2,14 +2,18 @@ name: Publish to npm
 
 on:
   push:
-    branches:
-      - main # or your default branch
-    #tags:
-    #  - 'v*' # Trigger on version tags
+    tags:
+      - 'v*' # Trigger on version tags
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Auto Version"]
+    types:
+      - completed
 
 jobs:
   publish:
+    name: Publish Package
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
