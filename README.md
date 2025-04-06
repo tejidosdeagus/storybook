@@ -45,7 +45,13 @@ You can view it at: https://agust.github.io/storybook
 
 ### Publishing to npm
 
-To publish a new version to npm:
+The package is automatically published to npm when:
+- A new version tag is pushed
+- Changes are pushed to the main branch (automatically increments patch version)
+
+#### Manual Version Bump
+
+To manually publish a new version to npm:
 
 1. Set up your npm organization:
 ```bash
@@ -73,7 +79,12 @@ npm run version [patch|minor|major]
 git push --follow-tags
 ```
 
-The GitHub Action will automatically publish the new version to npm when a version tag is pushed.
+#### Automatic Version Bump
+
+When you push changes to the main branch:
+- If the last commit wasn't a version bump, the patch version will be automatically incremented
+- The new version will be published to npm
+- The Storybook documentation will be updated
 
 Note: Make sure you have:
 - A valid npm publish token stored as `NPM_TOKEN` secret

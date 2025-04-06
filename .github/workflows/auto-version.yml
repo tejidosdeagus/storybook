@@ -1,0 +1,52 @@
+name: Auto Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Check if version changed
+        id: check_version
+        run: |
+          # Get the current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          # Get the last commit message
+          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          
+          # Check if the last commit was a version bump
+          if [[ $LAST_COMMIT_MSG == *"chore: bump version"* ]]; then
+            echo "Version was already bumped in the last commit"
+            echo "should_bump=false" >> $GITHUB_OUTPUT
+          else
+            echo "Version needs to be bumped"
+            echo "should_bump=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Bump version
+        if: steps.check_version.outputs.should_bump == 'true'
+        run: |
+          # Configure git
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Bump patch version
+          npm version patch -m "chore: bump version [skip ci]"
+          
+          # Push the new version tag
+          git push --follow-tags 
