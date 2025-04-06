@@ -1,9 +1,12 @@
 {
   "name": "@argamunin/storybook",
   "private": false,
-  "version": "1.0.3",
+  "version": "0.0.0",
   "type": "module",
   "homepage": "https://agust.github.io/storybook",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
