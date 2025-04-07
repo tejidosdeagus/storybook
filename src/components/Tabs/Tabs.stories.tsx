@@ -28,6 +28,8 @@ const navigationItems = [
   { label: 'AYUDA', value: 'help' },
   { label: 'CONTACTO', value: 'contact' },
   { label: 'ACERCA DE', value: 'about' },
+  { label: 'CARRITO', value: 'cart' },
+  { label: 'INICIAR SESIÓN', value: 'login' },
 ];
 
 export const Default: Story = {
