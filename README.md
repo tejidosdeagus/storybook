@@ -5,16 +5,21 @@ This is a React component library built with Storybook, showcasing reusable UI c
 ## Installation
 
 ```bash
-npm install @argamunin/storybook
+npm install @tejidosdeagus/storybook
 ```
 
 ## Usage
 
 ```jsx
-import { ComponentName } from '@argamunin/storybook';
+import { Button, Tabs } from '@tejidosdeagus/storybook';
 
 function App() {
-  return <ComponentName />;
+  return (
+    <>
+      <Button variant="primary">Botón grande</Button>
+      <Tabs items={[/* your items */]} />
+    </>
+  );
 }
 ```
 
@@ -22,7 +27,7 @@ function App() {
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/agust/storybook.git
+git clone https://github.com/tejidosdeagus/storybook.git
 cd storybook
 ```
 
@@ -36,60 +41,16 @@ npm install
 npm run storybook
 ```
 
-## Deployment
+## Using with GitHub Packages
 
-### GitHub Pages
-
-The Storybook documentation is automatically deployed to GitHub Pages when pushing to the main branch.
-You can view it at: https://agust.github.io/storybook
-
-### Publishing to npm
-
-The package is automatically published to npm when:
-- A new version tag is pushed
-- Changes are pushed to the main branch (automatically increments patch version)
-
-#### Manual Version Bump
-
-To manually publish a new version to npm:
-
-1. Set up your npm organization:
-```bash
-# Create the organization
-npm org create argamunin
-
-# Add yourself as an owner (replace YOUR_NPM_USERNAME with your actual npm username)
-npm org set argamunin YOUR_NPM_USERNAME owner
-
-# Create a publish token
-npm token create --type publish
+1. Create a `.npmrc` file in your project:
+```
+@tejidosdeagus:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
-2. Add the token to your GitHub repository:
-   - Go to repository Settings > Secrets and variables > Actions
-   - Add a new secret named `NPM_TOKEN` with your publish token
-
-3. Update the version and create a git tag:
-```bash
-npm run version [patch|minor|major]
-```
-
-4. Push the new version tag:
-```bash
-git push --follow-tags
-```
-
-#### Automatic Version Bump
-
-When you push changes to the main branch:
-- If the last commit wasn't a version bump, the patch version will be automatically incremented
-- The new version will be published to npm
-- The Storybook documentation will be updated
-
-Note: Make sure you have:
-- A valid npm publish token stored as `NPM_TOKEN` secret
-- The organization `@argamunin` created on your npm account
-- Owner permissions in the organization
+2. Make sure you have a GitHub personal access token with `read:packages` scope
+3. Set the token in your environment or in your `.npmrc`
 
 ## Scripts
 
@@ -97,7 +58,6 @@ Note: Make sure you have:
 - `npm run build` - Build the library
 - `npm run storybook` - Start Storybook locally
 - `npm run build-storybook` - Build Storybook for production
-- `npm run version` - Create a new version
 
 ## License
 
