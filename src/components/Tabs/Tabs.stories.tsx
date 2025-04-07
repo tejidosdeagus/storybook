@@ -11,7 +11,7 @@ const meta = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div style={{ width: '800px', padding: '0px' }}>
+      <div style={{ width: '800px', padding: '20px' }}>
         <Story />
       </div>
     ),
@@ -26,6 +26,8 @@ const navigationItems = [
   { label: 'PRODUCTOS', value: 'products' },
   { label: 'BLOG', value: 'blog' },
   { label: 'AYUDA', value: 'help' },
+  { label: 'CONTACTO', value: 'contact' },
+  { label: 'ACERCA DE', value: 'about' },
 ];
 
 export const Default: Story = {
