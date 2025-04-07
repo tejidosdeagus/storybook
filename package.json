@@ -1,6 +1,6 @@
 {
   "name": "@tejidosdeagus/storybook",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public"
+    "access": "restricted"
   },
   "repository": {
     "type": "git",
