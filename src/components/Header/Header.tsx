@@ -18,13 +18,13 @@ export const Header: React.FC<HeaderProps> = ({ items, value, onChange, logo }) 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '10px 30px',
+        padding: '10px 23px',
         fontFamily: 'Playfair Display',
       }}
     >
       {/* Logo */}
       <Box sx={{ width: '150px' }}>
-        {logo || <img src="src\assets\react.svg" alt="Tejidos de Agus" style={{ maxHeight: '50px' }} />}
+        {logo || <img src="src\assets\logotejidos.png" alt="Tejidos de Agus" style={{ maxHeight: '50px' }} />}
       </Box>
 
       {/* Tabs */}

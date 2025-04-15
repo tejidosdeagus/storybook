@@ -42,10 +42,13 @@ const StyledTab = styled(MuiTab)({
   fontSize: '18px',
   fontWeight: 600,
   textTransform: 'uppercase',
-  //padding: '8px 8px',
+  //padding: '0px 0px',
   minHeight: 'auto',
+  minWidth: 0,
   '&.Mui-selected': {
     color: '#4A4A4A',
+    fontWeight: 'bold',
+    textShadow: '1px 1px 3px rgba(0,0,0,0.25)',
   },
   '&:hover': {
     textShadow: '1px 1px 3px rgba(0,0,0,0.25)',
