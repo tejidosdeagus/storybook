@@ -1,12 +1,17 @@
 import React from 'react';
 import { Tabs as MuiTabs, Tab as MuiTab, styled } from '@mui/material';
 
+export interface TabItem {
+  label: React.ReactNode;
+  value: string;
+}
+
 export interface TabsProps {
   /**
    * The items to display in the tabs
    */
   items: {
-    label: string;
+    label: React.ReactNode;
     value: string;
   }[];
   /**
@@ -40,10 +45,10 @@ const StyledTab = styled(MuiTab)({
   //padding: '8px 8px',
   minHeight: 'auto',
   '&.Mui-selected': {
-    color: '#D4AF80',
+    color: '#4A4A4A',
   },
   '&:hover': {
-    color: '#D4AF80',
+    textShadow: '1px 1px 3px rgba(0,0,0,0.25)',
   },
 });
 

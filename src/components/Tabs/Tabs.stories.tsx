@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './Tabs';
 import { useState } from 'react';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const meta = {
   title: 'Components/Tabs',
@@ -11,7 +12,7 @@ const meta = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div style={{ width: '800px', padding: '20px' }}>
+      <div style={{ width: '1000px', backgroundColor: '#A8C3A3', padding: '20px' }}>
         <Story />
       </div>
     ),
@@ -26,10 +27,15 @@ const navigationItems = [
   { label: 'PRODUCTOS', value: 'products' },
   { label: 'BLOG', value: 'blog' },
   { label: 'AYUDA', value: 'help' },
-  { label: 'CONTACTO', value: 'contact' },
-  { label: 'ACERCA DE', value: 'about' },
-  { label: 'CARRITO', value: 'cart' },
   { label: 'INICIAR SESIÓN', value: 'login' },
+  { label: <ShoppingCartIcon sx={{
+    color: '#4A4A4A',
+    fontSize: 24,
+    transition: 'filter 0.2s ease-in-out',
+    '&:hover': {
+      filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.25))',
+    },
+  }} />, value: 'cart' },
 ];
 
 export const Default: Story = {
@@ -40,13 +46,11 @@ export const Default: Story = {
   render: function Render(args) {
     const [value, setValue] = useState(args.value);
     return (
-      <div style={{ backgroundColor: '#A8C3A3'}}>
       <Tabs
         {...args}
         value={value}
         onChange={(newValue) => setValue(newValue)}
       />
-      </div>
     );
   },
 };
@@ -55,9 +59,8 @@ export const WithLongContent: Story = {
   args: {
     items: [
       ...navigationItems,
-      { label: 'CATEGORÍAS', value: 'categories' },
-      { label: 'CONTACTO', value: 'contact' },
-      { label: 'ACERCA DE', value: 'about' },
+      { label: 'MIS CURSOS', value: 'my courses' },
+      { label: 'SALIR', value: 'logout' },
     ],
     value: 'courses',
   },
