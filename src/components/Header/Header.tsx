@@ -24,7 +24,8 @@ export const Header: React.FC<HeaderProps> = ({ items, value, onChange, logo }) 
     >
       {/* Logo */}
       <Box sx={{ width: '150px' }}>
-        {logo || <img src="src\assets\logotejidos.png" alt="Tejidos de Agus" style={{ maxHeight: '50px' }} />}
+        {logo || <img src="src\assets\logotejidos.png" alt="Tejidos de Agus" style={{ maxHeight: '50px' }} onClick={() => window.location.href = '/'}/>}
+
       </Box>
 
       {/* Tabs */}
