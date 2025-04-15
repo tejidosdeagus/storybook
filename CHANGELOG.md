@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/tejidosdeagus/storybook/compare/v1.2.0...v1.3.0) (2025-04-15)
+
+
+### Features
+
+* **storybook:** adding semantic relase for publish 3 ([dc87d2c](https://github.com/tejidosdeagus/storybook/commit/dc87d2caf9ce1ad2a381d6b9207fb3ab44f84bc9))
+
 # [1.2.0](https://github.com/tejidosdeagus/storybook/compare/v1.1.9...v1.2.0) (2025-04-15)
 
 
