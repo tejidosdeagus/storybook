@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/tejidosdeagus/storybook/compare/v1.4.2...v1.4.3) (2025-04-17)
+
+
+### Bug Fixes
+
+* **storybook:** fixing image import ([b9ed2c0](https://github.com/tejidosdeagus/storybook/commit/b9ed2c0a4d93ff2a204de4e04d98e9262154d061))
+
 ## [1.4.2](https://github.com/tejidosdeagus/storybook/compare/v1.4.1...v1.4.2) (2025-04-17)
 
 
