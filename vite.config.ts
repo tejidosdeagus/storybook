@@ -28,7 +28,13 @@ export default defineConfig({
           '@emotion/react': 'emotionReact',
           '@emotion/styled': 'emotionStyled',
         },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'index.css';
+          return assetInfo.name;
+        },
       },
     },
   },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
+  publicDir: 'public',
 })
