@@ -5,7 +5,7 @@ on:
     branches:
       - main # or your default branch
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 jobs:
@@ -22,9 +22,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@tejidosdeagus'
+          node-version: "20"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@tejidosdeagus"
 
       - name: Install dependencies
         run: npm ci
@@ -35,5 +35,5 @@ jobs:
       - name: Publish to GitHub Packages
         run: npx semantic-release
         env:
-          NPM_TOKEN: ${{ secrets.GH_GITHUB }} 
-          GITHUB_TOKEN: ${{ secrets.GH_GITHUB }}
+          NPM_TOKEN: ${{ secrets.GH_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
