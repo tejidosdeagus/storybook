@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/tejidosdeagus/storybook/compare/v1.4.0...v1.4.1) (2025-04-17)
+
+
+### Bug Fixes
+
+* **storybook:** fix deploy npm ([f449552](https://github.com/tejidosdeagus/storybook/commit/f4495523da0b21b462a650bea8e5166e5a2bce15))
+
 # [1.4.0](https://github.com/tejidosdeagus/storybook/compare/v1.3.0...v1.4.0) (2025-04-15)
 
 
