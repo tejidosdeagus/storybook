@@ -37,5 +37,5 @@ jobs:
       - name: Publish to GitHub Packages
         run: npx semantic-release
         env:
-          NPM_TOKEN: ${{GH_GITHUB}}
+          NPM_TOKEN: ${{ secrets.GH_GITHUB }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
