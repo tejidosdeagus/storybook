@@ -1,3 +1,14 @@
+## [1.4.2](https://github.com/tejidosdeagus/storybook/compare/v1.4.1...v1.4.2) (2025-04-17)
+
+
+### Performance Improvements
+
+* **storybook:** update mayor version ([86309d5](https://github.com/tejidosdeagus/storybook/commit/86309d58e602e6d3472f2e3896bfde273e64bd04))
+* **storybook:** update mayor version ([08fd37c](https://github.com/tejidosdeagus/storybook/commit/08fd37c5b5ded2c667b6641547ddc8c65aa85205))
+* **storybook:** update mayor version ([31c511f](https://github.com/tejidosdeagus/storybook/commit/31c511fe2682fa2154a704fb678bcb59dc433aad))
+* **storybook:** update mayor version ([ee1a768](https://github.com/tejidosdeagus/storybook/commit/ee1a768722073b1e35e32941dbf849e3fba9cc71))
+* **storybook:** update mayor version ([e85a917](https://github.com/tejidosdeagus/storybook/commit/e85a9170ce975eede8f26d98c5dadfc9c4c3d6ed))
+
 ## [1.4.1](https://github.com/tejidosdeagus/storybook/compare/v1.4.0...v1.4.1) (2025-04-17)
 
 
