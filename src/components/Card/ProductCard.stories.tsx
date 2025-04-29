@@ -15,6 +15,6 @@ export const Default: Story = {
     title: 'Chaleco 1 - Guía de tejido',
     price: '$5000',
     image: 'https://via.placeholder.com/324',
-    onAddToCart: () => alert('Producto agregado al carrito'),
+    //onAddToCart: () => alert('Producto agregado al carrito'),
   },
 };
