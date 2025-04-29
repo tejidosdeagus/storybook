@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './Tabs';
 import { useState } from 'react';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { CartIconWithCounter } from '../CartIconWithCounter/CartIconWithCounter';
 
 const meta = {
   title: 'Components/Tabs',
@@ -28,14 +28,7 @@ const navigationItems = [
   { label: 'BLOG', value: 'blog' },
   { label: 'AYUDA', value: 'help' },
   { label: 'INICIAR SESIÓN', value: 'login' },
-  { label: <ShoppingCartIcon sx={{
-    color: '#4A4A4A',
-    fontSize: 24,
-    transition: 'filter 0.2s ease-in-out',
-    '&:hover': {
-      filter: 'drop-shadow(1px 1px 3px rgba(0,0,0,0.25))',
-    },
-  }} />, value: 'cart' },
+  { label: <CartIconWithCounter count={3} />, value: 'cart' }
 ];
 
 export const Default: Story = {
