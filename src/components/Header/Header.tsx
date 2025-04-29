@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { Tabs, TabItem } from '../Tabs/Tabs';
 import logoImage from '../../assets/logotejidos.png';
 
-interface HeaderProps {
+export interface HeaderProps {
   items: TabItem[];
   value: string;
   onChange: (value: string) => void;
