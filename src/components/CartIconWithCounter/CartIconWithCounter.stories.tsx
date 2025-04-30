@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '../Button';
 
 const meta = {
-  title: 'Components/CartIconWithCounter',
+  title: 'Ecommerce/CartIconWithCounter',
   component: CartIconWithCounter,
 };
 
