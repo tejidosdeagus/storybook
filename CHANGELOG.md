@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/tejidosdeagus/storybook/compare/v1.4.4...v1.5.0) (2025-05-08)
+
+
+### Features
+
+* **storybook:** add carousel component ([8957e78](https://github.com/tejidosdeagus/storybook/commit/8957e78d6f603489721cb95e4f623587091ff205))
+
 ## [1.4.4](https://github.com/tejidosdeagus/storybook/compare/v1.4.3...v1.4.4) (2025-04-30)
 
 
