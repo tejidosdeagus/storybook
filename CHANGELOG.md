@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/tejidosdeagus/storybook/compare/v1.5.1...v1.5.2) (2025-05-08)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing build problem ([9ae45d1](https://github.com/tejidosdeagus/storybook/commit/9ae45d10741012db6a3a87b7c066704025de434a))
+* **storybook:** Fixing build problem ([c01d8b3](https://github.com/tejidosdeagus/storybook/commit/c01d8b3014fbc4a38386e2ab5a13653c27e1c449))
+
 ## [1.5.1](https://github.com/tejidosdeagus/storybook/compare/v1.5.0...v1.5.1) (2025-05-08)
 
 
