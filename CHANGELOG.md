@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/tejidosdeagus/storybook/compare/v1.5.0...v1.5.1) (2025-05-08)
+
+
+### Bug Fixes
+
+* **storybook:** fix index.ts ([6c48d2a](https://github.com/tejidosdeagus/storybook/commit/6c48d2af389934399ece6b50fe20ef24b5b9ad41))
+* **storybook:** fix index.ts ([99f68a6](https://github.com/tejidosdeagus/storybook/commit/99f68a683074fdec454ad9c4bc06fb220e501642))
+* **storybook:** fix index.ts ([a9d94ea](https://github.com/tejidosdeagus/storybook/commit/a9d94eafb4be0588b6718d15263a1a911e178f45))
+
 # [1.5.0](https://github.com/tejidosdeagus/storybook/compare/v1.4.4...v1.5.0) (2025-05-08)
 
 
