@@ -5,10 +5,11 @@ import dts from "rollup-plugin-dts";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
-import packageJson from "./package.json";
+import url from "@rollup/plugin-url";
+import fs from "fs";
+const packageJson = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
 export default [
-  // JavaScript and CSS build
   {
     input: "src/index.ts",
     output: [
@@ -29,21 +30,36 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
-        extract: true, // Extract CSS into a separate file
+        extract: true,
         minimize: true,
-        modules: false, // Disable CSS modules (adjust if needed)
+        modules: false,
       }),
-      terser(), // Minify JavaScript
+      url({
+        include: ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg", "**/*.gif"],
+        limit: 8192,
+        emitFiles: true,
+        fileName: "[name][hash][extname]",
+      }),
+      terser(),
     ],
     external: [
       ...Object.keys(packageJson.dependencies || {}),
       ...Object.keys(packageJson.peerDependencies || {}),
     ],
+    onwarn(warning, warn) {
+      // Suppress "use client" warnings
+      if (
+        warning.code === "MODULE_LEVEL_DIRECTIVE" &&
+        warning.message.includes('"use client"')
+      ) {
+        return;
+      }
+      warn(warning); // Handle other warnings normally
+    },
   },
-  // TypeScript declarations build
   {
     input: "dist/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    output: [{ file: "dist/index.d.ts", format: "es" }],
     plugins: [dts()],
   },
 ];
