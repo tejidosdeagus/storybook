@@ -4,7 +4,6 @@ import {
   ButtonProps as MuiButtonProps,
   styled,
 } from "@mui/material";
-//import "./Button.css";
 
 export interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
   /**
