@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/tejidosdeagus/storybook/compare/v1.5.2...v1.5.3) (2025-05-09)
+
+
+### Bug Fixes
+
+* **storybook:** Fix import problem ([6419b54](https://github.com/tejidosdeagus/storybook/commit/6419b54278b031f079b342ee413f67743f2f839a))
+
 ## [1.5.2](https://github.com/tejidosdeagus/storybook/compare/v1.5.1...v1.5.2) (2025-05-08)
 
 
