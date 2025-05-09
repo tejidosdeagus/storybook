@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/tejidosdeagus/storybook/compare/v1.5.3...v1.5.4) (2025-05-09)
+
+
+### Bug Fixes
+
+* **storybook:** Fix CartIcon ([3cf5b1b](https://github.com/tejidosdeagus/storybook/commit/3cf5b1bbed40ccb52437ab71a4ad294f72c0e44e))
+
 ## [1.5.3](https://github.com/tejidosdeagus/storybook/compare/v1.5.2...v1.5.3) (2025-05-09)
 
 
