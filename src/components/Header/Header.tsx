@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, useMediaQuery } from "@mui/material";
-import { CartIconWithCounter } from "../CartIconWithCounter";
 import { HamburgerMenu } from "../HamburgerMenu/HamburgerMenu";
 import { Tabs, TabItem } from "../Tabs/Tabs";
 import logoImage from "../../assets/logotejidos.png";
 
 export interface HeaderProps {
-  items: TabItem[];
+  tabItems: TabItem[];
   value: string;
   onChange: (value: string) => void;
   logo?: React.ReactNode;
@@ -14,21 +13,14 @@ export interface HeaderProps {
   cartCount?: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  items,
-  value,
-  onChange,
-  logo,
-  showCartIcon = false,
-  cartCount = 0,
-}) => {
+export const Header: React.FC<HeaderProps> = ({ tabItems, onChange, logo }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <Box sx={{ backgroundColor: "#A8C3A3" }}>
       {isMobile ? (
         <HamburgerMenu
-          items={items}
+          items={tabItems}
           onSelect={onChange}
           onCartClick={() => console.log("Ir al carrito")}
           logo={logo}
@@ -64,21 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
               alignItems: "center",
             }}
           >
-            <Tabs
-              items={[
-                ...items,
-                ...(showCartIcon
-                  ? [
-                      {
-                        label: <CartIconWithCounter count={cartCount} />,
-                        value: "cart",
-                      },
-                    ]
-                  : []),
-              ]}
-              value={value}
-              onChange={onChange}
-            />
+            <Tabs items={tabItems} />
           </Box>
         </Box>
       )}

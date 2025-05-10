@@ -1,17 +1,26 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "./Tabs";
+import { Sidebar } from "./Sidebar";
 import { CartIconWithCounter } from "../CartIconWithCounter/CartIconWithCounter";
 
-const meta: Meta<typeof Tabs> = {
-  title: "Components/Tabs",
-  component: Tabs,
+const meta: Meta<typeof Sidebar> = {
+  title: "Components/Sidebar",
+  component: Sidebar,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div style={{ width: 1000, backgroundColor: "#A8C3A3", padding: 20 }}>
+      <div
+        style={{
+          height: 500,
+          width: 400,
+          backgroundColor: "#A8C3A3",
+          padding: 20,
+        }}
+      >
         <Story />
       </div>
     ),
@@ -19,7 +28,7 @@ const meta: Meta<typeof Tabs> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Tabs>;
+type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
   render: () => {
@@ -47,7 +56,29 @@ export const Default: Story = {
         onChange: () => console.log("Carrito"),
       },
     ];
+    const [open, setOpen] = useState(false);
 
-    return <Tabs items={items} />;
+    return (
+      <>
+        <button
+          onClick={() => setOpen(true)}
+          style={{
+            margin: 16,
+            padding: 12,
+            border: "none",
+            background: "#D4AF80",
+            borderRadius: 6,
+            cursor: "pointer",
+            fontSize: 24,
+            fontWeight: "bold",
+            color: "#4A4A4A",
+          }}
+          aria-label="Open sidebar"
+        >
+          &#9776; {/* Unicode hamburger icon */}
+        </button>
+        <Sidebar items={items} open={open} onClose={() => setOpen(false)} />
+      </>
+    );
   },
 };
