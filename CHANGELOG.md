@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/tejidosdeagus/storybook/compare/v1.5.5...v1.6.0) (2025-05-10)
+
+
+### Features
+
+* **storybook:** Fixing problems ([7d97d56](https://github.com/tejidosdeagus/storybook/commit/7d97d5637be6a7d513a1f02f9892783c6608cd4b))
+
 ## [1.5.5](https://github.com/tejidosdeagus/storybook/compare/v1.5.4...v1.5.5) (2025-05-10)
 
 
