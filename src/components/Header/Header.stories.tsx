@@ -2,7 +2,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Header } from "./Header";
 import { useState } from "react";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { CartIconWithCounter } from "../CartIconWithCounter";
 
 const meta: Meta<typeof Header> = {
@@ -24,26 +23,25 @@ const navItems = [
   { label: "AYUDA", value: "help" },
   { label: "INICIAR SESIÓN", value: "login" },
   { label: <CartIconWithCounter count={0} />, value: "cart" },
-  {
-    label: (
-      <ShoppingCartIcon
-        sx={{
-          color: "#4A4A4A",
-          fontSize: 24,
-          transition: "filter 0.2s ease-in-out",
-          "&:hover": {
-            filter: "drop-shadow(1px 1px 3px rgba(0,0,0,0.25))",
-          },
-        }}
-      />
-    ),
-    value: "cart",
-  },
 ];
 
 export const Default: Story = {
   render: () => {
-    const [value, setValue] = useState("courses");
-    return <Header items={navItems} value={value} onChange={setValue} />;
+    const DefaultHeader = () => {
+      const [value, setValue] = useState("courses");
+
+      return (
+        <>
+          <Header
+            items={navItems}
+            value={value}
+            onChange={setValue}
+            showCartIcon
+            cartCount={0}
+          />
+        </>
+      );
+    };
+    return <DefaultHeader />;
   },
 };
