@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/tejidosdeagus/storybook/compare/v1.5.4...v1.5.5) (2025-05-10)
+
+
+### Bug Fixes
+
+* **storybook:** Fix Responsive ([6796a3a](https://github.com/tejidosdeagus/storybook/commit/6796a3aa01c6e72357d8ff8736a2d7f54190d7d6))
+
 ## [1.5.4](https://github.com/tejidosdeagus/storybook/compare/v1.5.3...v1.5.4) (2025-05-09)
 
 
