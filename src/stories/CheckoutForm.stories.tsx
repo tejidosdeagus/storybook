@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { CheckoutForm } from "./CheckoutForm";
+import { CheckoutForm } from "../components/CheckoutForm";
 
 const meta: Meta<typeof CheckoutForm> = {
   title: "Components/CheckoutForm",

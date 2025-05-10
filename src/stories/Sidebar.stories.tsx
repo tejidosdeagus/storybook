@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar } from "./Sidebar";
-import { CartIconWithCounter } from "../CartIconWithCounter/CartIconWithCounter";
+import { Sidebar } from "../components/Sidebar";
+import { CartIconWithCounter } from "../components/CartIconWithCounter/CartIconWithCounter";
 
 const meta: Meta<typeof Sidebar> = {
   title: "Components/Sidebar",

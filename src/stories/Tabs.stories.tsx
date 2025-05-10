@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "./Tabs";
-import { CartIconWithCounter } from "../CartIconWithCounter/CartIconWithCounter";
+import { Tabs } from "../components/Tabs";
+import { CartIconWithCounter } from "../components/CartIconWithCounter/CartIconWithCounter";
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",

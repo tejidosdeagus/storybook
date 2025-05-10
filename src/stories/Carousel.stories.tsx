@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Carousel } from "./Carousel";
+import { Carousel } from "../components/Carousel";
 import img1 from "../../assets/img1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";

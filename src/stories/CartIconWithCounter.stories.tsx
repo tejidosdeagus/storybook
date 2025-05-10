@@ -1,6 +1,6 @@
-import { CartIconWithCounter } from "./CartIconWithCounter";
+import { CartIconWithCounter } from "../components/CartIconWithCounter";
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "../components/Button";
 
 const meta = {
   title: "Ecommerce/CartIconWithCounter",
