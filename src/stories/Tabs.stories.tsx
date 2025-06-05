@@ -48,6 +48,6 @@ export const Default: Story = {
       },
     ];
 
-    return <Tabs items={items} />;
+    return <Tabs items={items} selected="" onChange={() => console.log()} />;
   },
 };

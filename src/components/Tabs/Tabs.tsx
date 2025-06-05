@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tabs as MuiTabs, Tab as MuiTab, styled } from "@mui/material";
 
 export interface TabItem {
@@ -8,14 +8,10 @@ export interface TabItem {
 }
 
 export interface TabsProps {
-  /**
-   * The items to display in the tabs
-   */
   items: TabItem[];
-  /**
-   * Optional additional className
-   */
   className?: string;
+  selected: string;
+  onChange: (id: string) => void;
 }
 
 const StyledTabs = styled(MuiTabs)({
@@ -48,12 +44,15 @@ const StyledTab = styled(MuiTab)({
 /**
  * Navigation tabs component
  */
-export const Tabs = ({ items, className = "" }: TabsProps) => {
-  const [idSelected, setId] = useState<string>("");
-
+export const Tabs = ({
+  items,
+  className = "",
+  selected,
+  onChange,
+}: TabsProps) => {
   return (
     <StyledTabs
-      value={idSelected}
+      value={selected}
       className={className}
       variant="scrollable"
       scrollButtons="auto"
@@ -64,7 +63,7 @@ export const Tabs = ({ items, className = "" }: TabsProps) => {
           value={item.id}
           label={item.label}
           onClick={() => {
-            setId(item.id);
+            onChange(item.id);
             item.onChange(item.id);
           }}
           disableRipple
