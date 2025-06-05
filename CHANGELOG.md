@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/tejidosdeagus/storybook/compare/v1.7.0...v1.7.1) (2025-06-05)
+
+
+### Bug Fixes
+
+* **storybook:** Refactor component Tabs ([450efa3](https://github.com/tejidosdeagus/storybook/commit/450efa325ac57744e60c47bc8d9ef13155020636))
+
 # [1.7.0](https://github.com/tejidosdeagus/storybook/compare/v1.6.0...v1.7.0) (2025-05-10)
 
 
