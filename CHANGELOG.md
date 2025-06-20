@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/tejidosdeagus/storybook/compare/v1.7.1...v1.7.2) (2025-06-20)
+
+
+### Bug Fixes
+
+* **storybook:** Updating component BlogCard ([88b66a2](https://github.com/tejidosdeagus/storybook/commit/88b66a2a01a12c642c245f4bbfd54e911a2d259b))
+
 ## [1.7.1](https://github.com/tejidosdeagus/storybook/compare/v1.7.0...v1.7.1) (2025-06-05)
 
 
