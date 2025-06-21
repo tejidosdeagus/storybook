@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Accordion from "../components/Accordion";
+import { Accordion } from "../components/Accordion";
 
 const meta: Meta<typeof Accordion> = {
   title: "Components/Accordion",
@@ -18,5 +18,12 @@ export const Default: Story = {
     title: "¿Cuáles son los medios de pago?",
     children: "This is the content of the accordion.",
     customVariant: "default",
+  },
+};
+
+export const WithEditButton: Story = {
+  args: {
+    ...Default.args,
+    onEdit: () => alert("Edit button clicked!"),
   },
 };

@@ -6,14 +6,17 @@ import {
   AccordionDetails,
   Typography,
   styled,
+  IconButton,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import EditIcon from "@mui/icons-material/Edit";
 
 type AccordionVariant = "default";
 
 export interface AccordionProps extends Omit<MuiAccordionProps, "title"> {
   customVariant?: AccordionVariant;
   title: string;
+  onEdit?: () => void;
 }
 
 const StyledAccordion = styled(MuiAccordion, {
@@ -41,8 +44,14 @@ export const Accordion: React.FC<AccordionProps> = ({
   customVariant = "default",
   title,
   children,
+  onEdit,
   ...props
 }) => {
+  const handleEditClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    onEdit?.();
+  };
+
   return (
     <StyledAccordion customVariant={customVariant} {...props}>
       <AccordionSummary
@@ -50,9 +59,20 @@ export const Accordion: React.FC<AccordionProps> = ({
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography sx={{ fontFamily: "Poppins", fontSize: 22 }}>
-          {title}
-        </Typography>
+        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+          <Typography sx={{ fontFamily: "Poppins", fontSize: 22, flexGrow: 1 }}>
+            {title}
+          </Typography>
+          {onEdit && (
+            <IconButton
+              aria-label="edit"
+              onClick={handleEditClick}
+              sx={{ color: "#4A4A4A" }}
+            >
+              <EditIcon />
+            </IconButton>
+          )}
+        </div>
       </AccordionSummary>
       <AccordionDetails>{children}</AccordionDetails>
     </StyledAccordion>
