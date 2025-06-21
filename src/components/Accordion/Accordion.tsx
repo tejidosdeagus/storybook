@@ -65,6 +65,7 @@ export const Accordion: React.FC<AccordionProps> = ({
           </Typography>
           {onEdit && (
             <IconButton
+              component="span"
               aria-label="edit"
               onClick={handleEditClick}
               sx={{ color: "#4A4A4A" }}
