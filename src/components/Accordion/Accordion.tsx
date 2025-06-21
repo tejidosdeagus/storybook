@@ -11,7 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 type AccordionVariant = "default";
 
-interface AccordionProps extends Omit<MuiAccordionProps, "title"> {
+export interface AccordionProps extends Omit<MuiAccordionProps, "title"> {
   customVariant?: AccordionVariant;
   title: string;
 }
