@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/tejidosdeagus/storybook/compare/v1.8.2...v1.8.3) (2025-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** Adding onEdit button to Accordeon ([9fa84e4](https://github.com/tejidosdeagus/storybook/commit/9fa84e46cefe868c1d3a9d6f1c0eeecf471542a0))
+
 ## [1.8.2](https://github.com/tejidosdeagus/storybook/compare/v1.8.1...v1.8.2) (2025-06-21)
 
 
