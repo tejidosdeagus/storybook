@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/tejidosdeagus/storybook/compare/v1.8.1...v1.8.2) (2025-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing export component Accordion ([dc2d2bc](https://github.com/tejidosdeagus/storybook/commit/dc2d2bccac7eb1bceea7834e4ada259b6e4210bb))
+
 ## [1.8.1](https://github.com/tejidosdeagus/storybook/compare/v1.8.0...v1.8.1) (2025-06-21)
 
 
