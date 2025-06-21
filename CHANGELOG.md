@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/tejidosdeagus/storybook/compare/v1.8.0...v1.8.1) (2025-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing component Accordeon ([715cf06](https://github.com/tejidosdeagus/storybook/commit/715cf06e7e8df47a3c3f4d7d789c3412fd45f533))
+
 # [1.8.0](https://github.com/tejidosdeagus/storybook/compare/v1.7.2...v1.8.0) (2025-06-21)
 
 
