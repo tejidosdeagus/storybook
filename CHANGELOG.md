@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/tejidosdeagus/storybook/compare/v1.7.2...v1.8.0) (2025-06-21)
+
+
+### Features
+
+* **storybook:** Adding new component Accordion ([b470bf5](https://github.com/tejidosdeagus/storybook/commit/b470bf51d8de66f34cfeb6cc0f59a49dce81c33e))
+
 ## [1.7.2](https://github.com/tejidosdeagus/storybook/compare/v1.7.1...v1.7.2) (2025-06-20)
 
 
