@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/tejidosdeagus/storybook/compare/v1.8.3...v1.8.4) (2025-06-21)
+
+
+### Bug Fixes
+
+* **storybook:** Updating accordion ([5075a91](https://github.com/tejidosdeagus/storybook/commit/5075a91848ce362cadf080bbf49c88de9900ade4))
+
 ## [1.8.3](https://github.com/tejidosdeagus/storybook/compare/v1.8.2...v1.8.3) (2025-06-21)
 
 
