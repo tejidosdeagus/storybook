@@ -37,7 +37,7 @@ const StyledAccordion = styled(MuiAccordion, {
   }),
 }));
 
-const Accordion: React.FC<AccordionProps> = ({
+export const Accordion: React.FC<AccordionProps> = ({
   customVariant = "default",
   title,
   children,
@@ -58,5 +58,3 @@ const Accordion: React.FC<AccordionProps> = ({
     </StyledAccordion>
   );
 };
-
-export default Accordion;
