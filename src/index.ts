@@ -8,3 +8,4 @@ export * from "./components/PriceTag/index";
 export * from "./components/QuantitySelector/index";
 export * from "./components/Sidebar/index";
 export * from "./components/Tabs/index";
+export * from "./components/Accordion/index";
