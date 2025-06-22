@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/tejidosdeagus/storybook/compare/v1.8.6...v1.9.0) (2025-06-22)
+
+
+### Features
+
+* **storybook:** Adding a new component Modal ([bc670ec](https://github.com/tejidosdeagus/storybook/commit/bc670ec8a7d30bc7172f9a73ec5646d95891eace))
+
 ## [1.8.6](https://github.com/tejidosdeagus/storybook/compare/v1.8.5...v1.8.6) (2025-06-22)
 
 
