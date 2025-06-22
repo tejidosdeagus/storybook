@@ -55,6 +55,14 @@ export const WithEditButton: Story = {
   },
 };
 
+export const WithEditAndDeleteButtons: Story = {
+  args: {
+    ...products[0],
+    onEdit: () => alert("Edit button clicked!"),
+    onDelete: () => alert("Delete button clicked!"),
+  },
+};
+
 export const ResponsiveGrid: Story = {
   render: () => (
     <Box
