@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/tejidosdeagus/storybook/compare/v1.8.4...v1.8.5) (2025-06-22)
+
+
+### Bug Fixes
+
+* **storybook:** fixing ProductCart styles ([9486a87](https://github.com/tejidosdeagus/storybook/commit/9486a8742472da5cd0d0e32f02cbc45ff7d2f606))
+
 ## [1.8.4](https://github.com/tejidosdeagus/storybook/compare/v1.8.3...v1.8.4) (2025-06-21)
 
 
