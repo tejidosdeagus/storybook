@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/tejidosdeagus/storybook/compare/v1.8.5...v1.8.6) (2025-06-22)
+
+
+### Bug Fixes
+
+* **storybook:** adding buttons delete to ProductCard ([ab655e8](https://github.com/tejidosdeagus/storybook/commit/ab655e801d0402f88dbbe38b9ceb974cf2d98053))
+
 ## [1.8.5](https://github.com/tejidosdeagus/storybook/compare/v1.8.4...v1.8.5) (2025-06-22)
 
 
