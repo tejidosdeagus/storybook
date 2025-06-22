@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/tejidosdeagus/storybook/compare/v1.9.0...v1.10.0) (2025-06-22)
+
+
+### Features
+
+* **storybook:** Adding new component Alert ([6c67b0c](https://github.com/tejidosdeagus/storybook/commit/6c67b0ce8253f209dc5dd4d7dfea924db6289fe6))
+
 # [1.9.0](https://github.com/tejidosdeagus/storybook/compare/v1.8.6...v1.9.0) (2025-06-22)
 
 
