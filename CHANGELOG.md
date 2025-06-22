@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/tejidosdeagus/storybook/compare/v1.10.0...v1.10.1) (2025-06-22)
+
+
+### Bug Fixes
+
+* **storybook:** Adding quantity of products to ProductCard ([2288d31](https://github.com/tejidosdeagus/storybook/commit/2288d319a7737ef26f35d1728c65303f1db3190c))
+
 # [1.10.0](https://github.com/tejidosdeagus/storybook/compare/v1.9.0...v1.10.0) (2025-06-22)
 
 
