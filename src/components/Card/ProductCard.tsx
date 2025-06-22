@@ -9,6 +9,7 @@ import {
 import { Button } from "../Button";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CloseIcon from "@mui/icons-material/Close";
 
 export interface ProductCardProps {
   image: string;
@@ -17,6 +18,10 @@ export interface ProductCardProps {
   onAddToCart?: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
+  quantity?: number;
+  maxQuantity?: number;
+  onQuantityChange?: (newQuantity: number) => void;
+  onDeleteSelection?: () => void;
 }
 
 export const ProductCard = ({
@@ -26,7 +31,30 @@ export const ProductCard = ({
   onAddToCart,
   onEdit,
   onDelete,
+  quantity = 0,
+  maxQuantity = 10,
+  onQuantityChange,
+  onDeleteSelection,
 }: ProductCardProps) => {
+  const handleDecrease = () => {
+    if (onQuantityChange && quantity > 1) {
+      onQuantityChange(quantity - 1);
+    }
+  };
+  const handleIncrease = () => {
+    if (onQuantityChange && quantity < maxQuantity) {
+      onQuantityChange(quantity + 1);
+    }
+  };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    if (onQuantityChange) {
+      if (!isNaN(value) && value >= 1 && value <= maxQuantity) {
+        onQuantityChange(value);
+      }
+    }
+  };
+
   return (
     <Card
       sx={{
@@ -114,9 +142,53 @@ export const ProductCard = ({
           <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
             {price}
           </Typography>
-          <Button onClick={onAddToCart} variant="primary">
-            Agregar al carrito
-          </Button>
+          {quantity > 0 && onQuantityChange ? (
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Button
+                onClick={handleDecrease}
+                variant="secondary"
+                disabled={quantity <= 1}
+                style={{ minWidth: 32, padding: 0 }}
+              >
+                -
+              </Button>
+              <input
+                type="number"
+                min={1}
+                max={maxQuantity}
+                value={quantity}
+                onChange={handleInputChange}
+                style={{
+                  width: 40,
+                  textAlign: "center",
+                  fontSize: 16,
+                  borderRadius: 4,
+                  border: "1px solid #ccc",
+                }}
+              />
+              <Button
+                onClick={handleIncrease}
+                variant="secondary"
+                disabled={quantity >= maxQuantity}
+                style={{ minWidth: 32, padding: 0 }}
+              >
+                +
+              </Button>
+              {onDeleteSelection && (
+                <IconButton
+                  aria-label="cancel selection"
+                  onClick={onDeleteSelection}
+                  sx={{ ml: 1 }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              )}
+            </Box>
+          ) : (
+            <Button onClick={onAddToCart} variant="primary">
+              Agregar al carrito
+            </Button>
+          )}
         </Box>
       </CardContent>
     </Card>

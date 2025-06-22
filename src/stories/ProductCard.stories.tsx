@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductCard, ProductCardProps } from "../components/Card";
 import { Box } from "@mui/material";
+import { useArgs } from "@storybook/preview-api";
 
 const meta: Meta<typeof ProductCard> = {
   title: "Components/ProductCard",
@@ -86,4 +87,25 @@ export const ResponsiveGrid: Story = {
       ))}
     </Box>
   ),
+};
+
+export const WithQuantitySelector = (args: ProductCardProps) => {
+  const [{ quantity = 0, maxQuantity = 5 }, updateArgs] = useArgs();
+  return (
+    <ProductCard
+      {...args}
+      quantity={quantity}
+      maxQuantity={maxQuantity}
+      onAddToCart={() => updateArgs({ quantity: 1 })}
+      onQuantityChange={(newQuantity) => updateArgs({ quantity: newQuantity })}
+      onDeleteSelection={() => updateArgs({ quantity: 0 })}
+    />
+  );
+};
+WithQuantitySelector.args = {
+  title: "Chaleco 1 - Guía de tejido",
+  price: "$5000",
+  image: "https://via.placeholder.com/324",
+  quantity: 0,
+  maxQuantity: 5,
 };
