@@ -11,3 +11,4 @@ export * from "./components/Tabs/index";
 export * from "./components/Accordion/index";
 export * from "./components/Modal/index";
 export * from "./components/Alert/index";
+export * from "./components/Pagination/index";
