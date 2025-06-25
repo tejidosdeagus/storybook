@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/tejidosdeagus/storybook/compare/v1.10.1...v1.11.0) (2025-06-25)
+
+
+### Features
+
+* **storybook:** Adding new component Pagination ([299f479](https://github.com/tejidosdeagus/storybook/commit/299f47971a6ff9d91a7ac3dae25519f3f4552481))
+
 ## [1.10.1](https://github.com/tejidosdeagus/storybook/compare/v1.10.0...v1.10.1) (2025-06-22)
 
 
