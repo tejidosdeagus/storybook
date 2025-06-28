@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ProductCard, ProductCardProps } from "../components/Card";
+import { ProductCard, ProductCardProps } from "../components/ProductCard";
 import { Box } from "@mui/material";
 import { useArgs } from "@storybook/preview-api";
 

@@ -19,3 +19,11 @@ export const Default: Story = {
     onClick: () => alert("Seguir leyendo..."),
   },
 };
+
+export const WithEditAndDeleteButtons: Story = {
+  args: {
+    ...Default.args,
+    onEdit: () => alert("Edit button clicked!"),
+    onDelete: () => alert("Delete button clicked!"),
+  },
+};

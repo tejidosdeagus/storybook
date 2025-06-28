@@ -1,6 +1,6 @@
 export * from "./components/BlogCard/index";
 export * from "./components/Button/index";
-export * from "./components/Card/index";
+export * from "./components/ProductCard/index";
 export * from "./components/Carousel/index";
 export * from "./components/CartIconWithCounter/index";
 export * from "./components/CheckoutForm/index";

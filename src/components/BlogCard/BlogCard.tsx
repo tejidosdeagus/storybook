@@ -1,5 +1,14 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import { Button } from "../Button";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export type BlogCardProps = {
   image: string;
@@ -7,6 +16,8 @@ export type BlogCardProps = {
   title: string;
   summary: string;
   onClick: () => void;
+  onEdit?: () => void;
+  onDelete?: () => void;
 };
 
 export const BlogCard = ({
@@ -15,10 +26,13 @@ export const BlogCard = ({
   title,
   summary,
   onClick,
+  onEdit,
+  onDelete,
 }: BlogCardProps) => {
   return (
     <Card
       sx={{
+        position: "relative",
         minWidth: 300,
         maxWidth: 500,
         minHeight: 600,
@@ -31,6 +45,46 @@ export const BlogCard = ({
         paddingTop: "50px",
       }}
     >
+      {(onEdit || onDelete) && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: 8,
+            right: 8,
+            display: "flex",
+            gap: 0.5,
+          }}
+        >
+          {onEdit && (
+            <IconButton
+              aria-label="edit"
+              onClick={onEdit}
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                },
+              }}
+            >
+              <EditIcon />
+            </IconButton>
+          )}
+          {onDelete && (
+            <IconButton
+              aria-label="delete"
+              onClick={onDelete}
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                },
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+          )}
+        </Box>
+      )}
       <CardMedia
         component="img"
         image={image}
