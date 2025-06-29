@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/tejidosdeagus/storybook/compare/v1.11.1...v1.11.2) (2025-06-29)
+
+
+### Bug Fixes
+
+* **storybook:** Adding menu to Tabs ([7dc35f9](https://github.com/tejidosdeagus/storybook/commit/7dc35f99dfc686d0985526de45f9c6b322e6d14a))
+
 ## [1.11.1](https://github.com/tejidosdeagus/storybook/compare/v1.11.0...v1.11.1) (2025-06-28)
 
 
