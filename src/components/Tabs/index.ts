@@ -1,2 +1,2 @@
-export { Tabs } from './Tabs';
-export type { TabsProps } from './Tabs'; 
+export { Tabs } from "./Tabs";
+export type { TabsProps, TabItem, SubMenuItem } from "./Tabs";
