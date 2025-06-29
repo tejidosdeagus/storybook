@@ -40,10 +40,73 @@ export const Default: Story = {
         id: "login",
         label: "INICIAR SESIÓN",
         onChange: () => console.log("Iniciar sesión"),
+        children: [
+          {
+            id: "profile",
+            name: "Mi perfil",
+            onClick: () => console.log("Mi perfil clicked"),
+          },
+          {
+            id: "my-courses",
+            name: "Mis cursos",
+            onClick: () => console.log("Mis cursos clicked"),
+          },
+          {
+            id: "logout",
+            name: "Cerrar sesión",
+            onClick: () => console.log("Cerrar sesión clicked"),
+          },
+        ],
       },
       {
         id: "cart",
         label: <CartIconWithCounter count={0} />,
+        onChange: () => console.log("Carrito"),
+      },
+    ];
+
+    return <Tabs items={items} selected="" onChange={() => console.log()} />;
+  },
+};
+
+export const WithDropdown: Story = {
+  render: () => {
+    const items = [
+      {
+        id: "home",
+        label: "INICIO",
+        onChange: () => console.log("Inicio"),
+      },
+      {
+        id: "account",
+        label: "MI CUENTA",
+        onChange: () => console.log("Mi cuenta"),
+        children: [
+          {
+            id: "profile",
+            name: "Mi perfil",
+            onClick: () => console.log("Mi perfil clicked"),
+          },
+          {
+            id: "settings",
+            name: "Configuración",
+            onClick: () => console.log("Configuración clicked"),
+          },
+          {
+            id: "orders",
+            name: "Mis pedidos",
+            onClick: () => console.log("Mis pedidos clicked"),
+          },
+          {
+            id: "logout",
+            name: "Cerrar sesión",
+            onClick: () => console.log("Cerrar sesión clicked"),
+          },
+        ],
+      },
+      {
+        id: "cart",
+        label: <CartIconWithCounter count={3} />,
         onChange: () => console.log("Carrito"),
       },
     ];
