@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/tejidosdeagus/storybook/compare/v1.11.0...v1.11.1) (2025-06-28)
+
+
+### Bug Fixes
+
+* **storybook:** Adding button edit and delete to blogCard ([c828a64](https://github.com/tejidosdeagus/storybook/commit/c828a64b1e448444f7ca207a70ef36c23cfc2d2b))
+
 # [1.11.0](https://github.com/tejidosdeagus/storybook/compare/v1.10.1...v1.11.0) (2025-06-25)
 
 
