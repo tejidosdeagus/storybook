@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/tejidosdeagus/storybook/compare/v1.11.3...v1.11.4) (2025-06-30)
+
+
+### Bug Fixes
+
+* **storybook:** Adding type for Tabs ([63e2e72](https://github.com/tejidosdeagus/storybook/commit/63e2e72580ddd5df0e4593ee82b9b1daead790f1))
+
 ## [1.11.3](https://github.com/tejidosdeagus/storybook/compare/v1.11.2...v1.11.3) (2025-06-29)
 
 
