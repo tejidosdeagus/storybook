@@ -145,6 +145,7 @@ export const Tabs = ({
             backgroundColor: "#A8C3A3",
           },
         }}
+        disableScrollLock={true}
       >
         {activeTabId &&
           items
