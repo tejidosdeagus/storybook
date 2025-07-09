@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/tejidosdeagus/storybook/compare/v1.11.4...v1.11.5) (2025-07-09)
+
+
+### Bug Fixes
+
+* **storybook:** Adding favorite button to blogcard ([655a634](https://github.com/tejidosdeagus/storybook/commit/655a6342c38fb02724b6ab8f6e68e54a5e6139c5))
+
 ## [1.11.4](https://github.com/tejidosdeagus/storybook/compare/v1.11.3...v1.11.4) (2025-06-30)
 
 
