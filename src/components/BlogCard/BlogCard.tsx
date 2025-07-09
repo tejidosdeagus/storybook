@@ -9,6 +9,7 @@ import {
 import { Button } from "../Button";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export type BlogCardProps = {
   image: string;
@@ -18,6 +19,7 @@ export type BlogCardProps = {
   onClick: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
+  onFavorite?: () => void;
 };
 
 export const BlogCard = ({
@@ -28,6 +30,7 @@ export const BlogCard = ({
   onClick,
   onEdit,
   onDelete,
+  onFavorite,
 }: BlogCardProps) => {
   return (
     <Card
@@ -45,7 +48,7 @@ export const BlogCard = ({
         paddingTop: "50px",
       }}
     >
-      {(onEdit || onDelete) && (
+      {(onFavorite || onEdit || onDelete) && (
         <Box
           sx={{
             position: "absolute",
@@ -55,6 +58,20 @@ export const BlogCard = ({
             gap: 0.5,
           }}
         >
+          {onFavorite && (
+            <IconButton
+              aria-label="favorite"
+              onClick={onFavorite}
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                },
+              }}
+            >
+              <FavoriteIcon />
+            </IconButton>
+          )}
           {onEdit && (
             <IconButton
               aria-label="edit"

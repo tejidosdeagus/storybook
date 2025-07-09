@@ -25,5 +25,6 @@ export const WithEditAndDeleteButtons: Story = {
     ...Default.args,
     onEdit: () => alert("Edit button clicked!"),
     onDelete: () => alert("Delete button clicked!"),
+    onFavorite: () => alert("Favorite button clicked!"),
   },
 };
