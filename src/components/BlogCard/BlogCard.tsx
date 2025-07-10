@@ -35,17 +35,15 @@ export const BlogCard = ({
   return (
     <Card
       sx={{
-        position: "relative",
-        minWidth: 300,
-        maxWidth: 500,
-        minHeight: 600,
-        maxHeight: 750,
+        width: 350,
+        height: 600,
         backgroundColor: "#D4AF80",
         borderRadius: 2,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         paddingTop: "50px",
+        position: "relative",
       }}
     >
       {(onFavorite || onEdit || onDelete) && (
@@ -102,17 +100,31 @@ export const BlogCard = ({
           )}
         </Box>
       )}
-      <CardMedia
-        component="img"
-        image={image}
-        alt={title}
+      <Box
         sx={{
-          minWidth: 300,
-          height: 325,
-          objectFit: "cover",
-          alignSelf: "center",
+          width: "100%",
+          aspectRatio: "16/9",
+          background: "#e0e0e0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
         }}
-      />
+      >
+        <CardMedia
+          component="img"
+          image={image}
+          alt={title}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+        />
+      </Box>
       <CardContent
         sx={{
           display: "flex",
