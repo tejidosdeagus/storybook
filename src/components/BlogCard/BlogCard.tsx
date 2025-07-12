@@ -36,7 +36,7 @@ export const BlogCard = ({
     <Card
       sx={{
         width: 350,
-        height: 600,
+        height: 500,
         backgroundColor: "#D4AF80",
         borderRadius: 2,
         overflow: "hidden",

@@ -96,6 +96,7 @@ export const WithQuantitySelector = (args: ProductCardProps) => {
       {...args}
       quantity={quantity}
       maxQuantity={maxQuantity}
+      priceWithDiscount="$75.00"
       onAddToCart={() => updateArgs({ quantity: 1 })}
       onQuantityChange={(newQuantity) => updateArgs({ quantity: newQuantity })}
       onDeleteSelection={() => updateArgs({ quantity: 0 })}

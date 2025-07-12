@@ -15,6 +15,7 @@ export interface ProductCardProps {
   image: string;
   title: string;
   price: string;
+  priceWithDiscount?: string; // New prop for discounted price
   onAddToCart?: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
@@ -28,6 +29,7 @@ export const ProductCard = ({
   image,
   title,
   price,
+  priceWithDiscount,
   onAddToCart,
   onEdit,
   onDelete,
@@ -139,9 +141,35 @@ export const ProductCard = ({
             alignItems: "center",
           }}
         >
-          <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
-            {price}
-          </Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
+            {priceWithDiscount ? (
+              <>
+                <Typography
+                  sx={{
+                    fontSize: 16,
+                    fontWeight: 400,
+                    textDecoration: "line-through",
+                    color: "#4A4A4A",
+                  }}
+                >
+                  {price}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: 24,
+                    fontWeight: 700,
+                    color: "#D54848",
+                  }}
+                >
+                  {priceWithDiscount}
+                </Typography>
+              </>
+            ) : (
+              <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
+                {price}
+              </Typography>
+            )}
+          </Box>
           {quantity > 0 && onQuantityChange ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Button
