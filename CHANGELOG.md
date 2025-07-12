@@ -1,3 +1,10 @@
+## [1.11.8](https://github.com/tejidosdeagus/storybook/compare/v1.11.7...v1.11.8) (2025-07-12)
+
+
+### Bug Fixes
+
+* **storybook:** Adding onCLick to ProductCard ([ec13ed7](https://github.com/tejidosdeagus/storybook/commit/ec13ed798bc98497720031dc9b1a62a1c9e3afa1))
+
 ## [1.11.7](https://github.com/tejidosdeagus/storybook/compare/v1.11.6...v1.11.7) (2025-07-12)
 
 
