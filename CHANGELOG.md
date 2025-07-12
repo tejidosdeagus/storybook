@@ -1,3 +1,10 @@
+## [1.11.7](https://github.com/tejidosdeagus/storybook/compare/v1.11.6...v1.11.7) (2025-07-12)
+
+
+### Bug Fixes
+
+* **storybook:** Adding priceDiscount to ProductCard ([a021eae](https://github.com/tejidosdeagus/storybook/commit/a021eae44039b7d125374fc306d192380f42be30))
+
 ## [1.11.6](https://github.com/tejidosdeagus/storybook/compare/v1.11.5...v1.11.6) (2025-07-10)
 
 
