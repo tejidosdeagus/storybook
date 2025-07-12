@@ -16,6 +16,7 @@ export interface ProductCardProps {
   title: string;
   price: string;
   priceWithDiscount?: string; // New prop for discounted price
+  onClick?: () => void; // New prop for card click
   onAddToCart?: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
@@ -30,6 +31,7 @@ export const ProductCard = ({
   title,
   price,
   priceWithDiscount,
+  onClick,
   onAddToCart,
   onEdit,
   onDelete,
@@ -57,8 +59,22 @@ export const ProductCard = ({
     }
   };
 
+  const handleCardClick = (event: React.MouseEvent) => {
+    // Only execute onClick if the click wasn't on a button or input
+    const target = event.target as HTMLElement;
+    const isButton =
+      target.closest("button") ||
+      target.closest("input") ||
+      target.closest('[role="button"]');
+
+    if (!isButton && onClick) {
+      onClick();
+    }
+  };
+
   return (
     <Card
+      onClick={handleCardClick}
       sx={{
         position: "relative",
         width: "100%",
@@ -72,6 +88,14 @@ export const ProductCard = ({
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: "8px",
+        cursor: onClick ? "pointer" : "default",
+        "&:hover": onClick
+          ? {
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+              transform: "translateY(-2px)",
+              transition: "all 0.2s ease-in-out",
+            }
+          : {},
       }}
     >
       {(onEdit || onDelete) && (
