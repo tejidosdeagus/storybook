@@ -1,3 +1,10 @@
+## [1.11.9](https://github.com/tejidosdeagus/storybook/compare/v1.11.8...v1.11.9) (2025-08-03)
+
+
+### Bug Fixes
+
+* **storybook:** Adding draft to blogcard ([21d37e3](https://github.com/tejidosdeagus/storybook/commit/21d37e3251f6cc051d5f4dfc41268248d5fd6160))
+
 ## [1.11.8](https://github.com/tejidosdeagus/storybook/compare/v1.11.7...v1.11.8) (2025-07-12)
 
 
