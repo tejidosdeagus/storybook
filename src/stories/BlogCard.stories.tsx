@@ -26,5 +26,6 @@ export const WithEditAndDeleteButtons: Story = {
     onEdit: () => alert("Edit button clicked!"),
     onDelete: () => alert("Delete button clicked!"),
     onFavorite: () => alert("Favorite button clicked!"),
+    isDraft: true,
   },
 };

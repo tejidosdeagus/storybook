@@ -65,7 +65,9 @@ export const Default: Story = {
       },
     ];
 
-    return <Tabs items={items} selected="" onChange={() => console.log()} />;
+    return (
+      <Tabs items={items} selected="courses" onChange={() => console.log()} />
+    );
   },
 };
 
@@ -111,6 +113,8 @@ export const WithDropdown: Story = {
       },
     ];
 
-    return <Tabs items={items} selected="" onChange={() => console.log()} />;
+    return (
+      <Tabs items={items} selected="home" onChange={() => console.log()} />
+    );
   },
 };

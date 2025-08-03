@@ -10,6 +10,7 @@ import { Button } from "../Button";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import DraftIcon from "@mui/icons-material/Drafts";
 
 export type BlogCardProps = {
   image: string;
@@ -20,6 +21,8 @@ export type BlogCardProps = {
   onEdit?: () => void;
   onDelete?: () => void;
   onFavorite?: () => void;
+  isDraft?: boolean;
+  draftText?: string;
 };
 
 export const BlogCard = ({
@@ -31,6 +34,8 @@ export const BlogCard = ({
   onEdit,
   onDelete,
   onFavorite,
+  isDraft,
+  draftText = "Borrador",
 }: BlogCardProps) => {
   return (
     <Card
@@ -46,7 +51,7 @@ export const BlogCard = ({
         position: "relative",
       }}
     >
-      {(onFavorite || onEdit || onDelete) && (
+      {(onFavorite || onEdit || onDelete || isDraft) && (
         <Box
           sx={{
             position: "absolute",
@@ -56,6 +61,20 @@ export const BlogCard = ({
             gap: 0.5,
           }}
         >
+          {isDraft && (
+            <IconButton
+              aria-label="draft"
+              sx={{
+                backgroundColor: "#D4AF80",
+                pointerEvents: "none",
+                "&:hover": {
+                  backgroundColor: "#D4AF80",
+                },
+              }}
+            >
+              <Typography>{draftText}</Typography>
+            </IconButton>
+          )}
           {onFavorite && (
             <IconButton
               aria-label="favorite"
@@ -91,7 +110,7 @@ export const BlogCard = ({
               sx={{
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
                 "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  backgroundColor: "#D54848",
                 },
               }}
             >
