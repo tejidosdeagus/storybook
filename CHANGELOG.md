@@ -1,3 +1,10 @@
+## [1.11.10](https://github.com/tejidosdeagus/storybook/compare/v1.11.9...v1.11.10) (2025-08-21)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing blogcard ([0e77a70](https://github.com/tejidosdeagus/storybook/commit/0e77a70d35464a9994b7a4c454ebf4f6d88153eb))
+
 ## [1.11.9](https://github.com/tejidosdeagus/storybook/compare/v1.11.8...v1.11.9) (2025-08-03)
 
 
