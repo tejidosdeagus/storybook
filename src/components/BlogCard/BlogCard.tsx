@@ -159,7 +159,7 @@ export const BlogCard = ({
             sx={{
               fontFamily: "Italiana",
               fontStyle: "italic",
-              fontSize: "0.875rem",
+              fontSize: "1.25rem",
               color: "#4A4A4A",
               mb: 1,
             }}
@@ -171,7 +171,7 @@ export const BlogCard = ({
             sx={{
               fontFamily: "Playfair Display",
               fontWeight: 700,
-              fontSize: "1.25rem",
+              fontSize: "1.75rem",
               color: "#4A4A4A",
               mb: 1,
               lineHeight: 1.3,
@@ -183,7 +183,7 @@ export const BlogCard = ({
           <Typography
             sx={{
               fontFamily: "Playfair Display",
-              fontSize: "0.875rem",
+              fontSize: "1.25rem",
               color: "#D54848",
               display: "-webkit-box",
               WebkitLineClamp: 3,
