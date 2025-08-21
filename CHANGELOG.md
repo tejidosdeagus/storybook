@@ -1,3 +1,10 @@
+## [1.11.11](https://github.com/tejidosdeagus/storybook/compare/v1.11.10...v1.11.11) (2025-08-21)
+
+
+### Bug Fixes
+
+* **storybook:** updating font sizes blogcard ([9593193](https://github.com/tejidosdeagus/storybook/commit/95931937bcba183f345ac6bb7be88ed14afdaa22))
+
 ## [1.11.10](https://github.com/tejidosdeagus/storybook/compare/v1.11.9...v1.11.10) (2025-08-21)
 
 
