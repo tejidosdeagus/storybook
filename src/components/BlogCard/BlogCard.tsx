@@ -47,7 +47,6 @@ export const BlogCard = ({
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        paddingTop: "50px",
         position: "relative",
       }}
     >
@@ -59,6 +58,7 @@ export const BlogCard = ({
             right: 8,
             display: "flex",
             gap: 0.5,
+            zIndex: 1,
           }}
         >
           {isDraft && (
@@ -72,7 +72,9 @@ export const BlogCard = ({
                 },
               }}
             >
-              <Typography>{draftText}</Typography>
+              <Typography variant="caption" sx={{ fontSize: "0.75rem" }}>
+                {draftText}
+              </Typography>
             </IconButton>
           )}
           {onFavorite && (
@@ -122,14 +124,12 @@ export const BlogCard = ({
       <Box
         sx={{
           width: "100%",
-          aspectRatio: "16/9",
+          height: 200,
           background: "#e0e0e0",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
-          borderTopLeftRadius: 8,
-          borderTopRightRadius: 8,
         }}
       >
         <CardMedia
@@ -151,7 +151,7 @@ export const BlogCard = ({
           flexGrow: 1,
           justifyContent: "space-between",
           px: 2,
-          py: 1,
+          py: 2,
         }}
       >
         <div>
@@ -159,8 +159,9 @@ export const BlogCard = ({
             sx={{
               fontFamily: "Italiana",
               fontStyle: "italic",
-              fontSize: 32,
+              fontSize: "0.875rem",
               color: "#4A4A4A",
+              mb: 1,
             }}
           >
             {date}
@@ -170,8 +171,10 @@ export const BlogCard = ({
             sx={{
               fontFamily: "Playfair Display",
               fontWeight: 700,
-              fontSize: 32,
+              fontSize: "1.25rem",
               color: "#4A4A4A",
+              mb: 1,
+              lineHeight: 1.3,
             }}
           >
             {title}
@@ -180,14 +183,15 @@ export const BlogCard = ({
           <Typography
             sx={{
               fontFamily: "Playfair Display",
-              fontSize: 32,
+              fontSize: "0.875rem",
               color: "#D54848",
               display: "-webkit-box",
-              WebkitLineClamp: 2,
+              WebkitLineClamp: 3,
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "normal",
+              lineHeight: 1.4,
             }}
           >
             {summary}
@@ -197,7 +201,7 @@ export const BlogCard = ({
         <Button
           onClick={onClick}
           variant="secondary"
-          sx={{ alignSelf: "flex-start" }}
+          sx={{ alignSelf: "flex-start", mt: 2 }}
         >
           Seguir leyendo
         </Button>
