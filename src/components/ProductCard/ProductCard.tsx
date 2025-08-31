@@ -77,10 +77,8 @@ export const ProductCard = ({
       onClick={handleCardClick}
       sx={{
         position: "relative",
-        width: "100%",
-        minWidth: 300,
-        maxWidth: 500,
-        height: "auto",
+        width: 350,
+        height: 500,
         backgroundColor: "transparent",
         color: "#4A4A4A",
         fontFamily: "Poppins, sans-serif",
