@@ -79,7 +79,7 @@ export const ProductCard = ({
         position: "relative",
         width: 350,
         height: 500,
-        backgroundColor: "transparent",
+        backgroundColor: "#D4AF80",
         color: "#4A4A4A",
         fontFamily: "Poppins, sans-serif",
         display: "flex",
@@ -152,7 +152,14 @@ export const ProductCard = ({
       <CardContent sx={{ padding: 2 }}>
         <Typography
           variant="subtitle1"
-          sx={{ fontWeight: 600, fontSize: 22, mb: 1 }}
+          sx={{
+            fontFamily: "Playfair Display",
+            fontWeight: 700,
+            fontSize: "1.75rem",
+            color: "#4A4A4A",
+            mb: 1,
+            lineHeight: 1.3,
+          }}
         >
           {title}
         </Typography>
@@ -168,7 +175,8 @@ export const ProductCard = ({
               <>
                 <Typography
                   sx={{
-                    fontSize: 16,
+                    fontFamily: "Playfair Display",
+                    fontSize: 20,
                     fontWeight: 400,
                     textDecoration: "line-through",
                     color: "#4A4A4A",
@@ -178,7 +186,8 @@ export const ProductCard = ({
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: 24,
+                    fontFamily: "Playfair Display",
+                    fontSize: 28,
                     fontWeight: 700,
                     color: "#D54848",
                   }}
@@ -187,7 +196,13 @@ export const ProductCard = ({
                 </Typography>
               </>
             ) : (
-              <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
+              <Typography
+                sx={{
+                  fontFamily: "Playfair Display",
+                  fontSize: 28,
+                  fontWeight: 700,
+                }}
+              >
                 {price}
               </Typography>
             )}
@@ -235,7 +250,7 @@ export const ProductCard = ({
               )}
             </Box>
           ) : (
-            <Button onClick={onAddToCart} variant="primary">
+            <Button onClick={onAddToCart} variant="secondary">
               Agregar al carrito
             </Button>
           )}
