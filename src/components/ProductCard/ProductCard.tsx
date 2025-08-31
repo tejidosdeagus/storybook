@@ -79,7 +79,7 @@ export const ProductCard = ({
         position: "relative",
         width: 350,
         height: 500,
-        backgroundColor: "#D4AF80",
+        backgroundColor: "#F3E5D8",
         color: "#4A4A4A",
         fontFamily: "Poppins, sans-serif",
         display: "flex",
@@ -153,9 +153,9 @@ export const ProductCard = ({
         <Typography
           variant="subtitle1"
           sx={{
-            fontFamily: "Playfair Display",
-            fontWeight: 700,
-            fontSize: "1.75rem",
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: 600,
+            fontSize: "1.5rem",
             color: "#4A4A4A",
             mb: 1,
             lineHeight: 1.3,
@@ -175,8 +175,8 @@ export const ProductCard = ({
               <>
                 <Typography
                   sx={{
-                    fontFamily: "Playfair Display",
-                    fontSize: 20,
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: "1.25rem",
                     fontWeight: 400,
                     textDecoration: "line-through",
                     color: "#4A4A4A",
@@ -186,9 +186,9 @@ export const ProductCard = ({
                 </Typography>
                 <Typography
                   sx={{
-                    fontFamily: "Playfair Display",
-                    fontSize: 28,
-                    fontWeight: 700,
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: "1.75rem",
+                    fontWeight: 600,
                     color: "#D54848",
                   }}
                 >
@@ -198,9 +198,9 @@ export const ProductCard = ({
             ) : (
               <Typography
                 sx={{
-                  fontFamily: "Playfair Display",
-                  fontSize: 28,
-                  fontWeight: 700,
+                  fontFamily: "Poppins, sans-serif",
+                  fontSize: "1.75rem",
+                  fontWeight: 600,
                 }}
               >
                 {price}
@@ -250,7 +250,7 @@ export const ProductCard = ({
               )}
             </Box>
           ) : (
-            <Button onClick={onAddToCart} variant="secondary">
+            <Button onClick={onAddToCart} variant="primary">
               Agregar al carrito
             </Button>
           )}
