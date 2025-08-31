@@ -1,3 +1,10 @@
+## [1.11.13](https://github.com/tejidosdeagus/storybook/compare/v1.11.12...v1.11.13) (2025-08-31)
+
+
+### Bug Fixes
+
+* **storybook:** Adding more styles to ProductCard ([5867d66](https://github.com/tejidosdeagus/storybook/commit/5867d66dd3437afd541d565af9f9225338ee5fb0))
+
 ## [1.11.12](https://github.com/tejidosdeagus/storybook/compare/v1.11.11...v1.11.12) (2025-08-31)
 
 
