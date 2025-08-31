@@ -1,3 +1,10 @@
+## [1.11.12](https://github.com/tejidosdeagus/storybook/compare/v1.11.11...v1.11.12) (2025-08-31)
+
+
+### Bug Fixes
+
+* **storybook:** Updating dimensions on ProductCard ([c2776ea](https://github.com/tejidosdeagus/storybook/commit/c2776ea49aa5e285ca7bd38e810303d17551fd33))
+
 ## [1.11.11](https://github.com/tejidosdeagus/storybook/compare/v1.11.10...v1.11.11) (2025-08-21)
 
 
