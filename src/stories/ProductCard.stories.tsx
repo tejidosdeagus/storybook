@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductCard, ProductCardProps } from "../components/ProductCard";
-import { Box } from "@mui/material";
+import { Box, Typography, Paper } from "@mui/material";
 import { useArgs } from "@storybook/preview-api";
+import { useState } from "react";
 
 const meta: Meta<typeof ProductCard> = {
   title: "Components/ProductCard",
@@ -110,4 +111,205 @@ WithQuantitySelector.args = {
   image: "https://via.placeholder.com/324",
   quantity: 0,
   maxQuantity: 5,
+};
+
+// Nueva story que muestra productos en el carrito
+export const ProductsInCart: Story = {
+  render: () => {
+    const [cartItems, setCartItems] = useState([
+      { id: 1, title: "Chaleco 1", price: "$5000", image: "https://via.placeholder.com/324", quantity: 2 },
+      { id: 2, title: "Chaleco 2", price: "$5500", image: "https://via.placeholder.com/324", quantity: 1 },
+      { id: 3, title: "Chaleco 3", price: "$4800", image: "https://via.placeholder.com/324", quantity: 3 },
+    ]);
+
+    const updateQuantity = (id: number, newQuantity: number) => {
+      setCartItems(prev => 
+        prev.map(item => 
+          item.id === id ? { ...item, quantity: newQuantity } : item
+        )
+      );
+    };
+
+    const removeFromCart = (id: number) => {
+      setCartItems(prev => prev.filter(item => item.id !== id));
+    };
+
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    const totalPrice = cartItems.reduce((sum, item) => {
+      const price = parseInt(item.price.replace('$', ''));
+      return sum + (price * item.quantity);
+    }, 0);
+
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Carrito de Compras ({totalItems} items)
+        </Typography>
+        
+        <Box sx={{ display: "grid", gap: 2, mb: 3 }}>
+          {cartItems.map((item) => (
+            <ProductCard
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              image={item.image}
+              quantity={item.quantity}
+              maxQuantity={10}
+              onQuantityChange={(newQuantity) => updateQuantity(item.id, newQuantity)}
+              onDeleteSelection={() => removeFromCart(item.id)}
+            />
+          ))}
+        </Box>
+
+        <Paper sx={{ p: 3, backgroundColor: "#F3E5D8" }}>
+          <Typography variant="h5" sx={{ mb: 2, fontFamily: "Poppins, sans-serif" }}>
+            Resumen del Carrito
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 1 }}>
+            Total de items: {totalItems}
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+            Total: ${totalPrice.toLocaleString()}
+          </Typography>
+        </Paper>
+      </Box>
+    );
+  },
+};
+
+// Story que muestra el proceso de agregar al carrito
+export const AddToCartProcess: Story = {
+  render: () => {
+    const [cartState, setCartState] = useState<'empty' | 'adding' | 'added'>('empty');
+    const [quantity, setQuantity] = useState(0);
+
+    const handleAddToCart = () => {
+      setCartState('adding');
+      setTimeout(() => {
+        setCartState('added');
+        setQuantity(1);
+      }, 500);
+    };
+
+    const handleQuantityChange = (newQuantity: number) => {
+      setQuantity(newQuantity);
+    };
+
+    const handleDeleteSelection = () => {
+      setQuantity(0);
+      setCartState('empty');
+    };
+
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h5" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Proceso: Agregar al Carrito
+        </Typography>
+        
+        <ProductCard
+          title="Chaleco Premium - Guía Completa"
+          price="$7500"
+          priceWithDiscount="$6500"
+          image="https://via.placeholder.com/324"
+          quantity={quantity}
+          maxQuantity={5}
+          onAddToCart={handleAddToCart}
+          onQuantityChange={handleQuantityChange}
+          onDeleteSelection={handleDeleteSelection}
+        />
+
+        <Box sx={{ mt: 3, p: 2, backgroundColor: "#f5f5f5", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Estado del Carrito:
+          </Typography>
+          <Typography variant="body2" sx={{ 
+            color: cartState === 'empty' ? '#666' : 
+                   cartState === 'adding' ? '#f57c00' : '#4caf50',
+            fontWeight: 'bold'
+          }}>
+            {cartState === 'empty' && '🛒 Carrito vacío - Haz clic en "Agregar al carrito"'}
+            {cartState === 'adding' && '⏳ Agregando al carrito...'}
+            {cartState === 'added' && `✅ Producto agregado (Cantidad: ${quantity})`}
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+// Nueva story que muestra productos con controles de cantidad deshabilitados
+export const SingleQuantityProducts: Story = {
+  render: () => {
+    const [products, setProducts] = useState([
+      { id: 1, title: "E-book: Patrones Básicos", price: "$2500", image: "https://via.placeholder.com/324", quantity: 0, disableControls: true },
+      { id: 2, title: "Curso Online: Tejido", price: "$8000", image: "https://via.placeholder.com/324", quantity: 0, disableControls: true },
+      { id: 3, title: "Kit de Herramientas", price: "$3500", image: "https://via.placeholder.com/324", quantity: 0, disableControls: false },
+    ]);
+
+    const handleAddToCart = (id: number) => {
+      setProducts(prev => 
+        prev.map(product => 
+          product.id === id ? { ...product, quantity: 1 } : product
+        )
+      );
+    };
+
+    const handleQuantityChange = (id: number, newQuantity: number) => {
+      setProducts(prev => 
+        prev.map(product => 
+          product.id === id ? { ...product, quantity: newQuantity } : product
+        )
+      );
+    };
+
+    const handleDeleteSelection = (id: number) => {
+      setProducts(prev => 
+        prev.map(product => 
+          product.id === id ? { ...product, quantity: 0 } : product
+        )
+      );
+    };
+
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Productos con Controles de Cantidad Deshabilitados
+        </Typography>
+        
+        <Typography variant="body1" sx={{ mb: 3, color: "#666" }}>
+          Los productos digitales (e-books, cursos) solo permiten agregar 1 unidad. 
+          Los productos físicos permiten cambiar cantidades.
+        </Typography>
+
+        <Box sx={{ display: "grid", gap: 3 }}>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              quantity={product.quantity}
+              maxQuantity={product.disableControls ? 1 : 5}
+              disableQuantityControls={product.disableControls}
+              onAddToCart={() => handleAddToCart(product.id)}
+              onQuantityChange={(newQuantity) => handleQuantityChange(product.id, newQuantity)}
+              onDeleteSelection={() => handleDeleteSelection(product.id)}
+            />
+          ))}
+        </Box>
+
+        <Box sx={{ mt: 3, p: 2, backgroundColor: "#f5f5f5", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Notas:
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            🔒 <strong>E-book y Curso:</strong> Solo 1 unidad permitida (controles deshabilitados)
+          </Typography>
+          <Typography variant="body2">
+            🛠️ <strong>Kit de Herramientas:</strong> Múltiples unidades permitidas (controles habilitados)
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
 };

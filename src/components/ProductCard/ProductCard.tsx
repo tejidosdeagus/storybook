@@ -24,6 +24,7 @@ export interface ProductCardProps {
   maxQuantity?: number;
   onQuantityChange?: (newQuantity: number) => void;
   onDeleteSelection?: () => void;
+  disableQuantityControls?: boolean; // New prop to disable quantity controls
 }
 
 export const ProductCard = ({
@@ -39,6 +40,7 @@ export const ProductCard = ({
   maxQuantity = 10,
   onQuantityChange,
   onDeleteSelection,
+  disableQuantityControls = true,
 }: ProductCardProps) => {
   const handleDecrease = () => {
     if (onQuantityChange && quantity > 1) {
@@ -209,36 +211,42 @@ export const ProductCard = ({
           </Box>
           {quantity > 0 && onQuantityChange ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Button
-                onClick={handleDecrease}
-                variant="secondary"
-                disabled={quantity <= 1}
-                style={{ minWidth: 32, padding: 0 }}
-              >
-                -
-              </Button>
+              {!disableQuantityControls && (
+                <Button
+                  onClick={handleDecrease}
+                  variant="secondary"
+                  disabled={quantity <= 1}
+                  style={{ minWidth: 32, padding: 0, height: "32px" }}
+                >
+                  -
+                </Button>
+              )}
               <input
                 type="number"
                 min={1}
                 max={maxQuantity}
                 value={quantity}
                 onChange={handleInputChange}
+                disabled={disableQuantityControls}
                 style={{
                   width: 40,
                   textAlign: "center",
                   fontSize: 16,
                   borderRadius: 4,
                   border: "1px solid #ccc",
+                  opacity: disableQuantityControls ? 0.6 : 1,
                 }}
               />
-              <Button
-                onClick={handleIncrease}
-                variant="secondary"
-                disabled={quantity >= maxQuantity}
-                style={{ minWidth: 32, padding: 0 }}
-              >
-                +
-              </Button>
+              {!disableQuantityControls && (
+                <Button
+                  onClick={handleIncrease}
+                  variant="secondary"
+                  disabled={quantity >= maxQuantity}
+                  style={{ minWidth: 32, padding: 0, height: "32px" }}
+                >
+                  +
+                </Button>
+              )}
               {onDeleteSelection && (
                 <IconButton
                   aria-label="cancel selection"
