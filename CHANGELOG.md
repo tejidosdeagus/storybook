@@ -1,3 +1,10 @@
+## [1.11.15](https://github.com/tejidosdeagus/storybook/compare/v1.11.14...v1.11.15) (2025-09-02)
+
+
+### Bug Fixes
+
+* **storybook:** Adding storie for productCard ([c6965cb](https://github.com/tejidosdeagus/storybook/commit/c6965cb798d1f6b5cfb3567c0a48a02ffb41feb6))
+
 ## [1.11.14](https://github.com/tejidosdeagus/storybook/compare/v1.11.13...v1.11.14) (2025-08-31)
 
 
