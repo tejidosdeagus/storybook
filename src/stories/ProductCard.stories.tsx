@@ -468,7 +468,7 @@ export const AvailableVsPurchased: Story = {
             🆕 <strong>Disponible:</strong> Botón "Agregar al carrito" (verde)
           </Typography>
           <Typography variant="body2" sx={{ mb: 1 }}>
-            ✅ <strong>Comprado:</strong> Chip "Comprado" + Barra de progreso + Botón "Ver mi curso" (marrón)
+            ✅ <strong>Comprado:</strong> Chip "Comprado" + Barra de progreso + Botón "Ir a mi curso" (marrón)
           </Typography>
           <Typography variant="body2">
             🚫 <strong>Protección:</strong> Los cursos comprados no se pueden agregar al carrito nuevamente

@@ -343,7 +343,7 @@ export const ProductCard = ({
               variant={isPurchased ? "secondary" : "primary"}
               disabled={isPurchased && !onViewCourse}
             >
-              {isPurchased ? "Ver mi curso" : "Agregar al carrito"}
+              {isPurchased ? "Ir a mi curso" : "Agregar al carrito"}
             </Button>
           )}
         </Box>
