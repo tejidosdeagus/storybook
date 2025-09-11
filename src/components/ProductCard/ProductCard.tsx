@@ -5,11 +5,14 @@ import {
   Typography,
   Box,
   IconButton,
+  Chip,
+  // LinearProgress,
 } from "@mui/material";
 import { Button } from "../Button";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 export interface ProductCardProps {
   image: string;
@@ -25,6 +28,9 @@ export interface ProductCardProps {
   onQuantityChange?: (newQuantity: number) => void;
   onDeleteSelection?: () => void;
   disableQuantityControls?: boolean; // New prop to disable quantity controls
+  isPurchased?: boolean; // New prop to indicate if course is purchased
+  // purchasedProgress?: number; // Progress percentage for purchased courses
+  onViewCourse?: () => void; // New prop for viewing purchased course
 }
 
 export const ProductCard = ({
@@ -41,6 +47,9 @@ export const ProductCard = ({
   onQuantityChange,
   onDeleteSelection,
   disableQuantityControls = true,
+  isPurchased = false,
+  // purchasedProgress = 0,
+  onViewCourse,
 }: ProductCardProps) => {
   const handleDecrease = () => {
     if (onQuantityChange && quantity > 1) {
@@ -98,46 +107,68 @@ export const ProductCard = ({
           : {},
       }}
     >
-      {(onEdit || onDelete) && (
-        <Box
-          sx={{
-            position: "absolute",
-            top: 8,
-            right: 8,
-            display: "flex",
-            gap: 0.5,
-          }}
-        >
-          {onEdit && (
-            <IconButton
-              aria-label="edit"
-              onClick={onEdit}
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 1)",
-                },
-              }}
-            >
-              <EditIcon />
-            </IconButton>
-          )}
-          {onDelete && (
-            <IconButton
-              aria-label="delete"
-              onClick={onDelete}
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 1)",
-                },
-              }}
-            >
-              <DeleteIcon />
-            </IconButton>
-          )}
-        </Box>
-      )}
+      {/* Admin actions and purchased indicator */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 8,
+          right: 8,
+          display: "flex",
+          gap: 0.5,
+          flexDirection: "column",
+          alignItems: "flex-end",
+        }}
+      >
+        {/* Purchased indicator */}
+        {isPurchased && (
+          <Chip
+            icon={<CheckCircleIcon />}
+            label="Comprado"
+            size="small"
+            sx={{
+              backgroundColor: "#4CAF50",
+              color: "white",
+              fontSize: "0.75rem",
+              height: 24,
+              mb: 0.5,
+            }}
+          />
+        )}
+        
+        {/* Admin actions */}
+        {(onEdit || onDelete) && (
+          <Box sx={{ display: "flex", gap: 0.5 }}>
+            {onEdit && (
+              <IconButton
+                aria-label="edit"
+                onClick={onEdit}
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 1)",
+                  },
+                }}
+              >
+                <EditIcon />
+              </IconButton>
+            )}
+            {onDelete && (
+              <IconButton
+                aria-label="delete"
+                onClick={onDelete}
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 1)",
+                  },
+                }}
+              >
+                <DeleteIcon />
+              </IconButton>
+            )}
+          </Box>
+        )}
+      </Box>
       <CardMedia
         component="img"
         image={image}
@@ -146,6 +177,7 @@ export const ProductCard = ({
           width: "100%",
           height: "auto",
           aspectRatio: "1 / 1",
+          // aspectRatio: isPurchased && purchasedProgress > 0 ? "1.2 / 1" : "1 / 1",
           objectFit: "cover",
           alignSelf: "center",
           borderRadius: "4px",
@@ -157,14 +189,62 @@ export const ProductCard = ({
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            fontSize: "1.5rem",
+            fontSize: "1.2rem", // Reducido de 1.5rem a 1.2rem
             color: "#4A4A4A",
             mb: 1,
             lineHeight: 1.3,
+            height: "3.2rem", // Altura fija para 2 líneas máximo
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 2, // Máximo 2 líneas
+            WebkitBoxOrient: "vertical",
+            textOverflow: "ellipsis",
           }}
         >
           {title}
         </Typography>
+        
+        {/* Progress bar for purchased courses
+        {isPurchased && purchasedProgress > 0 && (
+          <Box sx={{ mb: 1 }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 0.5 }}>
+              <Typography
+                variant="caption"
+                sx={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontSize: "0.75rem",
+                  color: "#4A4A4A",
+                }}
+              >
+                Progreso
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontSize: "0.75rem",
+                  color: "#4A4A4A",
+                  fontWeight: 600,
+                }}
+              >
+                {purchasedProgress}%
+              </Typography>
+            </Box>
+            <LinearProgress
+              variant="determinate"
+              value={purchasedProgress}
+              sx={{
+                height: 6,
+                borderRadius: 3,
+                backgroundColor: "rgba(0, 0, 0, 0.1)",
+                "& .MuiLinearProgress-bar": {
+                  backgroundColor: "#4CAF50",
+                },
+              }}
+            />
+          </Box>
+        )}
+         */}
         <Box
           sx={{
             display: "flex",
@@ -258,8 +338,12 @@ export const ProductCard = ({
               )}
             </Box>
           ) : (
-            <Button onClick={onAddToCart} variant="primary">
-              Agregar al carrito
+            <Button 
+              onClick={isPurchased ? onViewCourse : onAddToCart} 
+              variant={isPurchased ? "secondary" : "primary"}
+              disabled={isPurchased && !onViewCourse}
+            >
+              {isPurchased ? "Ver mi curso" : "Agregar al carrito"}
             </Button>
           )}
         </Box>

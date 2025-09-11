@@ -65,3 +65,26 @@ export const Default: Story = {
 export const DeleteConfirmation: Story = {
   render: () => <DeleteModalWrapper />,
 };
+
+const WarningModalWrapper = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open Warning Modal</button>
+      <Modal
+        open={open}
+        title="Curso ya comprado"
+        message="Ya tienes este curso comprado. Puedes acceder a él desde 'Mis cursos'."
+        textAccept="Entendido"
+        onAccept={() => {
+          setOpen(false);
+        }}
+      />
+    </>
+  );
+};
+
+export const WarningModal: Story = {
+  render: () => <WarningModalWrapper />,
+};

@@ -313,3 +313,246 @@ export const SingleQuantityProducts: Story = {
     );
   },
 };
+
+// Nueva story que muestra productos comprados
+export const PurchasedCourse: Story = {
+  args: {
+    title: "Curso de Tejido Avanzado",
+    price: "$8000",
+    priceWithDiscount: "$7200",
+    image: "https://via.placeholder.com/324",
+    isPurchased: true,
+    // purchasedProgress: 65,
+    onViewCourse: () => alert("Navegando al visor de cursos..."),
+  },
+};
+
+// Story que muestra diferentes estados de progreso en cursos comprados
+export const PurchasedCoursesWithProgress: Story = {
+  render: () => {
+    const purchasedCourses = [
+      {
+        id: 1,
+        title: "Curso Básico de Tejido",
+        price: "$5000",
+        image: "https://via.placeholder.com/324",
+        progress: 100,
+        onViewCourse: () => alert("Curso completado - Navegando al visor..."),
+      },
+      {
+        id: 2,
+        title: "Patrones Intermedios",
+        price: "$6500",
+        image: "https://via.placeholder.com/324",
+        progress: 75,
+        onViewCourse: () => alert("Curso en progreso - Navegando al visor..."),
+      },
+      {
+        id: 3,
+        title: "Técnicas Avanzadas",
+        price: "$8000",
+        image: "https://via.placeholder.com/324",
+        progress: 30,
+        onViewCourse: () => alert("Curso recién iniciado - Navegando al visor..."),
+      },
+      {
+        id: 4,
+        title: "Diseño de Amigurumis",
+        price: "$9000",
+        image: "https://via.placeholder.com/324",
+        progress: 0,
+        onViewCourse: () => alert("Curso sin iniciar - Navegando al visor..."),
+      },
+    ];
+
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Mis Cursos Comprados
+        </Typography>
+        
+        <Typography variant="body1" sx={{ mb: 3, color: "#666" }}>
+          Estos son los cursos que ya has comprado. Puedes ver tu progreso y continuar aprendiendo.
+        </Typography>
+
+        <Box sx={{ 
+          display: "grid", 
+          gap: 3,
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))"
+        }}>
+          {purchasedCourses.map((course) => (
+            <ProductCard
+              key={course.id}
+              title={course.title}
+              price={course.price}
+              image={course.image}
+              isPurchased={true}
+              // purchasedProgress={course.progress}
+              onViewCourse={course.onViewCourse}
+            />
+          ))}
+        </Box>
+
+        <Box sx={{ mt: 3, p: 2, backgroundColor: "#f5f5f5", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Estados de Progreso:
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            ✅ <strong>100%:</strong> Curso completado
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            🔄 <strong>75%:</strong> Curso en progreso avanzado
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            📚 <strong>30%:</strong> Curso recién iniciado
+          </Typography>
+          <Typography variant="body2">
+            🆕 <strong>0%:</strong> Curso sin iniciar
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+// Story que compara curso disponible vs comprado
+export const AvailableVsPurchased: Story = {
+  render: () => {
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Comparación: Curso Disponible vs Comprado
+        </Typography>
+        
+        <Box sx={{ 
+          display: "grid", 
+          gap: 4,
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))"
+        }}>
+          {/* Curso Disponible */}
+          <Box>
+            <Typography variant="h6" sx={{ mb: 2, color: "#4A4A4A" }}>
+              Curso Disponible para Comprar
+            </Typography>
+            <ProductCard
+              title="Curso de Tejido Premium"
+              price="$10000"
+              priceWithDiscount="$8500"
+              image="https://via.placeholder.com/324"
+              onAddToCart={() => alert("Agregando al carrito...")}
+            />
+          </Box>
+
+          {/* Curso Comprado */}
+          <Box>
+            <Typography variant="h6" sx={{ mb: 2, color: "#4A4A4A" }}>
+              Curso Ya Comprado
+            </Typography>
+            <ProductCard
+              title="Curso de Tejido Premium"
+              price="$10000"
+              priceWithDiscount="$8500"
+              image="https://via.placeholder.com/324"
+              isPurchased={true}
+              // purchasedProgress={45}
+              onViewCourse={() => alert("Navegando al visor de cursos...")}
+            />
+          </Box>
+        </Box>
+
+        <Box sx={{ mt: 3, p: 2, backgroundColor: "#f5f5f5", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Diferencias Visuales:
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            🆕 <strong>Disponible:</strong> Botón "Agregar al carrito" (verde)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            ✅ <strong>Comprado:</strong> Chip "Comprado" + Barra de progreso + Botón "Ver mi curso" (marrón)
+          </Typography>
+          <Typography variant="body2">
+            🚫 <strong>Protección:</strong> Los cursos comprados no se pueden agregar al carrito nuevamente
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+// Story que muestra títulos largos para probar el truncado
+export const LongTitles: Story = {
+  render: () => {
+    const longTitleProducts = [
+      {
+        id: 1,
+        title: "Curso Básico de Tejido",
+        price: "$5000",
+        image: "https://via.placeholder.com/324",
+      },
+      {
+        id: 2,
+        title: "Curso Avanzado de Técnicas de Tejido a Crochet y Agujas para Principiantes",
+        price: "$8000",
+        image: "https://via.placeholder.com/324",
+      },
+      {
+        id: 3,
+        title: "Sweater Calden nuevo cambio 100mb",
+        price: "$9999",
+        image: "https://via.placeholder.com/324",
+      },
+      {
+        id: 4,
+        title: "Guía Completa de Patrones de Amigurumis para Principiantes y Avanzados",
+        price: "$12000",
+        image: "https://via.placeholder.com/324",
+      },
+    ];
+
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, fontFamily: "Poppins, sans-serif" }}>
+          Títulos Largos - Layout Consistente
+        </Typography>
+        
+        <Typography variant="body1" sx={{ mb: 3, color: "#666" }}>
+          Los títulos largos se truncan automáticamente para mantener el layout consistente de las tarjetas.
+        </Typography>
+
+        <Box sx={{ 
+          display: "grid", 
+          gap: 3,
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))"
+        }}>
+          {longTitleProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              onAddToCart={() => alert(`Agregando "${product.title}" al carrito...`)}
+            />
+          ))}
+        </Box>
+
+        <Box sx={{ mt: 3, p: 2, backgroundColor: "#f5f5f5", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            Características del Layout:
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            📏 <strong>Altura fija:</strong> Títulos limitados a 2 líneas máximo
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            ✂️ <strong>Truncado:</strong> Texto largo se corta con "..." 
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            📐 <strong>Consistencia:</strong> Botones siempre en la misma posición
+          </Typography>
+          <Typography variant="body2">
+            🎨 <strong>Tamaño reducido:</strong> Fuente más pequeña para mejor ajuste
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};

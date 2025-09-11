@@ -14,8 +14,8 @@ export interface ModalProps {
   variant?: ModalVariant;
   title: string;
   message: string;
-  textCancel: string;
-  onCancel: () => void;
+  textCancel?: string;
+  onCancel?: () => void;
   textAccept: string;
   onAccept: () => void;
 }
@@ -104,7 +104,7 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <StyledModal
       open={open}
-      onClose={onCancel}
+      onClose={onCancel || onAccept}
       aria-labelledby="modal-title"
       aria-describedby="modal-message"
     >
@@ -112,7 +112,9 @@ export const Modal: React.FC<ModalProps> = ({
         <ModalTitle id="modal-title">{title}</ModalTitle>
         <ModalMessage id="modal-message">{message}</ModalMessage>
         <ButtonContainer>
-          <CancelButton onClick={onCancel}>{textCancel}</CancelButton>
+          {textCancel && onCancel && (
+            <CancelButton onClick={onCancel}>{textCancel}</CancelButton>
+          )}
           <AcceptButton onClick={onAccept}>{textAccept}</AcceptButton>
         </ButtonContainer>
       </ModalContent>
