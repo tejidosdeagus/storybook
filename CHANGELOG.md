@@ -1,3 +1,10 @@
+## [1.11.16](https://github.com/tejidosdeagus/storybook/compare/v1.11.15...v1.11.16) (2025-09-11)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing problem ProductCard and Modal ([7785c7f](https://github.com/tejidosdeagus/storybook/commit/7785c7fd3020cfa54b3052062b1e4d46c5dcb3fd))
+
 ## [1.11.15](https://github.com/tejidosdeagus/storybook/compare/v1.11.14...v1.11.15) (2025-09-02)
 
 
