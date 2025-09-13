@@ -1,3 +1,10 @@
+## [1.11.18](https://github.com/tejidosdeagus/storybook/compare/v1.11.17...v1.11.18) (2025-09-13)
+
+
+### Bug Fixes
+
+* **storybook:** Update pagination ([f0da8d3](https://github.com/tejidosdeagus/storybook/commit/f0da8d3b31d3089f4f5b101f7c358d0f9c6d55de))
+
 ## [1.11.17](https://github.com/tejidosdeagus/storybook/compare/v1.11.16...v1.11.17) (2025-09-13)
 
 

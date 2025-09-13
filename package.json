@@ -1,6 +1,6 @@
 {
   "name": "@tejidosdeagus/storybook",
-  "version": "1.11.17",
+  "version": "1.11.18",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
