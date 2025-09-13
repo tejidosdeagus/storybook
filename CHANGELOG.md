@@ -1,3 +1,10 @@
+## [1.11.17](https://github.com/tejidosdeagus/storybook/compare/v1.11.16...v1.11.17) (2025-09-13)
+
+
+### Bug Fixes
+
+* **storybook:** Update style pagination and change Tabs value ([25d21e7](https://github.com/tejidosdeagus/storybook/commit/25d21e78820879b0f4836f731110e330290681ea))
+
 ## [1.11.16](https://github.com/tejidosdeagus/storybook/compare/v1.11.15...v1.11.16) (2025-09-11)
 
 
