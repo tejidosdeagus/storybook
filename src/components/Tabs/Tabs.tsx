@@ -104,10 +104,13 @@ export const Tabs = ({
 
   const open = Boolean(anchorEl);
 
+  // Validate that the selected value exists in items
+  const validSelectedValue = items.some(item => item.id === selected) ? selected : items[0]?.id || false;
+
   return (
     <Box>
       <StyledTabs
-        value={selected}
+        value={validSelectedValue}
         className={className}
         variant="scrollable"
         scrollButtons="auto"

@@ -64,10 +64,10 @@ const StyledPagination = styled(MuiPagination)({
   },
   "& .Mui-selected": {
     fontWeight: "bold",
-    backgroundColor: "#e8c3a9",
+    backgroundColor: "#a8c3a3", // --verde-claro
     color: "white",
     "&:hover": {
-      backgroundColor: "#e8c3a9",
+      backgroundColor: "#a8c3a3", // --verde-claro
       color: "white",
     },
   },
