@@ -58,7 +58,7 @@ const StyledPagination = styled(MuiPagination)({
     borderRadius: "6px",
     transition: "background-color 0.3s ease",
     "&:hover": {
-      backgroundColor: "#e8c3a9",
+      backgroundColor: "#a8c3a3",
       color: "white",
     },
   },
@@ -66,20 +66,25 @@ const StyledPagination = styled(MuiPagination)({
     fontWeight: "bold",
     backgroundColor: "#a8c3a3", // --verde-claro
     color: "white",
+    border: "1px solid #a8c3a3",
     "&:hover": {
       backgroundColor: "#a8c3a3", // --verde-claro
-      color: "white",
+      color: "white ",
     },
+  },
+  "& .MuiPaginationItem-root.Mui-selected": {
+    backgroundColor: "#a8c3a3",
+    color: "white",
   },
   "& .MuiPaginationItem-previousNext": {
     "&:hover": {
-      backgroundColor: "#e8c3a9",
+      backgroundColor: "#a8c3a3",
       color: "white",
     },
   },
   "& .MuiPaginationItem-firstLast": {
     "&:hover": {
-      backgroundColor: "#e8c3a9",
+      backgroundColor: "#a8c3a3",
       color: "white",
     },
   },
