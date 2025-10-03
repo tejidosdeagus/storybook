@@ -1,3 +1,10 @@
+## [1.11.19](https://github.com/tejidosdeagus/storybook/compare/v1.11.18...v1.11.19) (2025-10-03)
+
+
+### Bug Fixes
+
+* **storybook:** Fixing styles problem ([377fec9](https://github.com/tejidosdeagus/storybook/commit/377fec9e6c7e333cc0500595106f89ecde03e4e2))
+
 ## [1.11.18](https://github.com/tejidosdeagus/storybook/compare/v1.11.17...v1.11.18) (2025-09-13)
 
 
