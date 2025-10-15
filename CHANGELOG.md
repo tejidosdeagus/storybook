@@ -1,3 +1,10 @@
+## [1.11.20](https://github.com/tejidosdeagus/storybook/compare/v1.11.19...v1.11.20) (2025-10-15)
+
+
+### Bug Fixes
+
+* **storybook:** adding heigt to product card ([6d8f2fd](https://github.com/tejidosdeagus/storybook/commit/6d8f2fda582fe963de6acc163445bfb1a0a3ed82))
+
 ## [1.11.19](https://github.com/tejidosdeagus/storybook/compare/v1.11.18...v1.11.19) (2025-10-03)
 
 
