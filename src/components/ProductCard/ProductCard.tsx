@@ -31,6 +31,7 @@ export interface ProductCardProps {
   isPurchased?: boolean; // New prop to indicate if course is purchased
   // purchasedProgress?: number; // Progress percentage for purchased courses
   onViewCourse?: () => void; // New prop for viewing purchased course
+  height?: number; // Height of the card
 }
 
 export const ProductCard = ({
@@ -50,6 +51,7 @@ export const ProductCard = ({
   isPurchased = false,
   // purchasedProgress = 0,
   onViewCourse,
+  height = 500,
 }: ProductCardProps) => {
   const handleDecrease = () => {
     if (onQuantityChange && quantity > 1) {
@@ -89,7 +91,7 @@ export const ProductCard = ({
       sx={{
         position: "relative",
         width: 350,
-        height: 500,
+        height: { height },
         backgroundColor: "#F3E5D8",
         color: "#4A4A4A",
         fontFamily: "Poppins, sans-serif",
@@ -134,7 +136,7 @@ export const ProductCard = ({
             }}
           />
         )}
-        
+
         {/* Admin actions */}
         {(onEdit || onDelete) && (
           <Box sx={{ display: "flex", gap: 0.5 }}>
@@ -203,7 +205,7 @@ export const ProductCard = ({
         >
           {title}
         </Typography>
-        
+
         {/* Progress bar for purchased courses
         {isPurchased && purchasedProgress > 0 && (
           <Box sx={{ mb: 1 }}>
@@ -338,8 +340,8 @@ export const ProductCard = ({
               )}
             </Box>
           ) : (
-            <Button 
-              onClick={isPurchased ? onViewCourse : onAddToCart} 
+            <Button
+              onClick={isPurchased ? onViewCourse : onAddToCart}
               variant={isPurchased ? "secondary" : "primary"}
               disabled={isPurchased && !onViewCourse}
             >
