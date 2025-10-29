@@ -1,3 +1,10 @@
+## [1.11.21](https://github.com/tejidosdeagus/storybook/compare/v1.11.20...v1.11.21) (2025-10-29)
+
+
+### Bug Fixes
+
+* **storybook:** Removing chip fron productCard ([66889fe](https://github.com/tejidosdeagus/storybook/commit/66889feb520f3270d9b1f5afad4e96d06eabc70b))
+
 ## [1.11.20](https://github.com/tejidosdeagus/storybook/compare/v1.11.19...v1.11.20) (2025-10-15)
 
 
