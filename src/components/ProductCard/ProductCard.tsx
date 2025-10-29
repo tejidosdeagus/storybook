@@ -121,7 +121,7 @@ export const ProductCard = ({
           alignItems: "flex-end",
         }}
       >
-        {/* Purchased indicator */}
+        {/* Purchased indicator
         {isPurchased && (
           <Chip
             icon={<CheckCircleIcon />}
@@ -136,7 +136,7 @@ export const ProductCard = ({
             }}
           />
         )}
-
+        */}
         {/* Admin actions */}
         {(onEdit || onDelete) && (
           <Box sx={{ display: "flex", gap: 0.5 }}>
