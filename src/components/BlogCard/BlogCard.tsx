@@ -157,10 +157,11 @@ export const BlogCard = ({
         <div>
           <Typography
             sx={{
-              fontFamily: "Italiana",
-              fontStyle: "italic",
-              fontSize: "1.25rem",
-              color: "#4A4A4A",
+              textAlign: "left",
+              fontSize: "1.1rem",
+              color: "#7c6a58",
+              marginLeft: "2.5rem",
+              fontFamily: "Playfair Display",
               mb: 1,
             }}
           >
