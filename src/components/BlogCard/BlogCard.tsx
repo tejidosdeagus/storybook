@@ -125,7 +125,6 @@ export const BlogCard = ({
         sx={{
           width: "100%",
           height: 200,
-          background: "#e0e0e0",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
