@@ -1,3 +1,10 @@
+## [1.11.23](https://github.com/tejidosdeagus/storybook/compare/v1.11.22...v1.11.23) (2025-11-08)
+
+
+### Bug Fixes
+
+* **storybook:** Updating style ([621bd7d](https://github.com/tejidosdeagus/storybook/commit/621bd7d794e8a38eb4c1d99e4c8fe40e0da461c1))
+
 ## [1.11.22](https://github.com/tejidosdeagus/storybook/compare/v1.11.21...v1.11.22) (2025-11-08)
 
 
