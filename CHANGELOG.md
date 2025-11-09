@@ -1,3 +1,10 @@
+## [1.11.24](https://github.com/tejidosdeagus/storybook/compare/v1.11.23...v1.11.24) (2025-11-09)
+
+
+### Bug Fixes
+
+* **storybook:** Removing extra space in blogCard ([6ea3a25](https://github.com/tejidosdeagus/storybook/commit/6ea3a25bfd52b5fd635755604c4758d1e2f66690))
+
 ## [1.11.23](https://github.com/tejidosdeagus/storybook/compare/v1.11.22...v1.11.23) (2025-11-08)
 
 
