@@ -159,7 +159,6 @@ export const BlogCard = ({
               textAlign: "left",
               fontSize: "1.1rem",
               color: "#7c6a58",
-              marginLeft: "2.5rem",
               fontFamily: "Playfair Display",
               mb: 1,
             }}
