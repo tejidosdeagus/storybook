@@ -1,3 +1,10 @@
+## [1.11.26](https://github.com/tejidosdeagus/storybook/compare/v1.11.25...v1.11.26) (2025-11-16)
+
+
+### Bug Fixes
+
+* **storybook:** Updating component Modal ([b7137cc](https://github.com/tejidosdeagus/storybook/commit/b7137cc4f1eae6d93f698105ad0610da76535a18))
+
 ## [1.11.25](https://github.com/tejidosdeagus/storybook/compare/v1.11.24...v1.11.25) (2025-11-16)
 
 
