@@ -88,3 +88,35 @@ const WarningModalWrapper = () => {
 export const WarningModal: Story = {
   render: () => <WarningModalWrapper />,
 };
+
+const AlternativeModalWrapper = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open Alternative Modal</button>
+      <Modal
+        open={open}
+        title="¿Estás seguro que quieres salir?"
+        message="Tienes cambios sin guardar. Si sales ahora, perderás todos los cambios que no hayas guardado."
+        textAlternative="Salir"
+        onAlternative={() => {
+          setOpen(false);
+        }}
+        textCancel="Cancelar"
+        onCancel={() => {
+          setOpen(false);
+        }}
+        textAccept="Sí, guardar"
+        onAccept={() => {
+          alert("Accepted!");
+          setOpen(false);
+        }}
+      />
+    </>
+  );
+};
+
+export const AlternativeModal: Story = {
+  render: () => <AlternativeModalWrapper />,
+};

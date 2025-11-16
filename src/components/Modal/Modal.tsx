@@ -10,16 +10,16 @@ import {
 type ModalVariant = "default";
 
 export interface ModalProps {
-  open?: boolean;
+  open: boolean;
   variant?: ModalVariant;
-  title?: string;
-  message?: string;
-  children?: React.ReactNode; // Allow custom content
+  title: string;
+  message: string;
   textCancel?: string;
   onCancel?: () => void;
-  onClose?: () => void; // Alias for onCancel
-  textAccept?: string;
-  onAccept?: () => void;
+  textAccept: string;
+  onAccept: () => void;
+  textAlternative?: string;
+  onAlternative?: () => void;
 }
 
 const StyledModal = styled(MuiModal)({
@@ -46,7 +46,7 @@ const ModalContent = styled(Box, {
 
 const ModalTitle = styled(Typography)({
   fontFamily: "Poppins, sans-serif",
-  fontSize: "24px",
+  fontSize: "20px",
   fontWeight: 600,
   color: "#4A4A4A",
   marginBottom: "16px",
@@ -93,48 +93,62 @@ const AcceptButton = styled(Button)({
   },
 });
 
-export const Modal = ({
+const AlternativeButton = styled(Button)({
+  fontFamily: "Poppins, sans-serif",
+  fontSize: "14px",
+  fontWeight: 500,
+  textTransform: "none",
+  padding: "8px 16px",
+  border: "1px solid #8C6A5D",
+  color: "#8C6A5D",
+  "&:hover": {
+    backgroundColor: "rgba(140, 106, 93, 0.1)",
+    border: "1px solid #8C6A5D",
+  },
+});
+
+export const Modal: React.FC<ModalProps> = ({
   open,
   variant = "default",
   title,
   message,
-  children,
   textCancel,
   onCancel,
-  onClose,
   textAccept,
   onAccept,
-}: ModalProps & { children?: React.ReactNode }): React.ReactElement => {
-  const modalOpen = open !== undefined ? open : false;
-  // Support both onCancel and onClose props
-  const handleClose = onClose || onCancel || onAccept;
-
-  // Determine if we should show default buttons or custom content
-  const hasDefaultContent = title || message;
-  const hasCustomContent = children;
-  const hasDefaultButtons = textCancel || textAccept;
-
+  textAlternative,
+  onAlternative,
+}) => {
   return (
     <StyledModal
-      open={modalOpen}
-      onClose={handleClose}
-      aria-labelledby={title ? "modal-title" : undefined}
-      aria-describedby={message ? "modal-message" : undefined}
+      open={open}
+      onClose={onCancel || onAccept}
+      aria-labelledby="modal-title"
+      aria-describedby="modal-message"
     >
       <ModalContent variant={variant}>
-        {title && <ModalTitle id="modal-title">{title}</ModalTitle>}
-        {message && <ModalMessage id="modal-message">{message}</ModalMessage>}
-        {hasCustomContent && <Box>{children}</Box>}
-        {hasDefaultButtons && (
-          <ButtonContainer>
-            {textCancel && (onCancel || onClose) && (
-              <CancelButton onClick={onCancel || onClose}>{textCancel}</CancelButton>
-            )}
-            {textAccept && onAccept && (
+        <ModalTitle id="modal-title">{title}</ModalTitle>
+        <ModalMessage id="modal-message">{message}</ModalMessage>
+        <ButtonContainer>
+          {!textAlternative ? (
+            <>
+              {textCancel && onCancel && (
+                <CancelButton onClick={onCancel}>{textCancel}</CancelButton>
+              )}
               <AcceptButton onClick={onAccept}>{textAccept}</AcceptButton>
-            )}
-          </ButtonContainer>
-        )}
+            </>
+          ) : (
+            <>
+              <AcceptButton onClick={onAccept}>{textAccept}</AcceptButton>
+              {textAlternative && onAlternative && (
+                <AlternativeButton onClick={onAlternative}>{textAlternative}</AlternativeButton>
+              )}
+              {textCancel && onCancel && (
+                <CancelButton onClick={onCancel}>{textCancel}</CancelButton>
+              )}
+            </>
+          )}
+        </ButtonContainer>
       </ModalContent>
     </StyledModal>
   );
