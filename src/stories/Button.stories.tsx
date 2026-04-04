@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary"],
+      options: ["primary", "secondary", "error"],
     },
 
     fullWidth: {
@@ -34,6 +34,13 @@ export const Secondary: Story = {
   args: {
     variant: "secondary",
     children: "VER MAS PRODUCTOS",
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: "error",
+    children: "Eliminar",
   },
 };
 

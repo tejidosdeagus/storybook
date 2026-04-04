@@ -13,7 +13,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
   /**
    * Button variant
    */
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "error";
   /**
    * Optional additional className
    */
@@ -46,6 +46,14 @@ const StyledButton = styled(MuiButton)(({}) => ({
     color: "#F3E5D8",
     "&:hover": {
       backgroundColor: "#6D8B74",
+      opacity: 0.9,
+    },
+  },
+  "&.button--error": {
+    backgroundColor: "#D32F2F",
+    color: "#FFFFFF",
+    "&:hover": {
+      backgroundColor: "#C62828",
       opacity: 0.9,
     },
   },

@@ -20,3 +20,8 @@
   background-color: #6d8b74;
   color: #f3e5d8;
 }
+
+.button--error {
+  background-color: #d54848;
+  color: #ffffff;
+}
