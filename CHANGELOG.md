@@ -1,3 +1,10 @@
+## [1.11.27](https://github.com/tejidosdeagus/storybook/compare/v1.11.26...v1.11.27) (2026-04-04)
+
+
+### Bug Fixes
+
+* **storybook:** Adding new variant Button ([037a04f](https://github.com/tejidosdeagus/storybook/commit/037a04fd5dfe53e87fd4d6c9ae03d6fa4fd6187b))
+
 ## [1.11.26](https://github.com/tejidosdeagus/storybook/compare/v1.11.25...v1.11.26) (2025-11-16)
 
 
