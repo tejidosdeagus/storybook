@@ -1,3 +1,10 @@
+## [1.11.28](https://github.com/tejidosdeagus/storybook/compare/v1.11.27...v1.11.28) (2026-04-16)
+
+
+### Bug Fixes
+
+* **storybook:** adding mobile styles ([0848963](https://github.com/tejidosdeagus/storybook/commit/0848963dba34e36e32bd05604400092b644299af))
+
 ## [1.11.27](https://github.com/tejidosdeagus/storybook/compare/v1.11.26...v1.11.27) (2026-04-04)
 
 
