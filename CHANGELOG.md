@@ -1,3 +1,10 @@
+## [1.11.29](https://github.com/tejidosdeagus/storybook/compare/v1.11.28...v1.11.29) (2026-04-16)
+
+
+### Bug Fixes
+
+* **storybook:** fixing productCard ([9c40d7b](https://github.com/tejidosdeagus/storybook/commit/9c40d7beee3cf1348b65c904f1be1ea1a34a4fa4))
+
 ## [1.11.28](https://github.com/tejidosdeagus/storybook/compare/v1.11.27...v1.11.28) (2026-04-16)
 
 
