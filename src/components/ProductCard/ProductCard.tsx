@@ -90,8 +90,10 @@ export const ProductCard = ({
       onClick={handleCardClick}
       sx={{
         position: "relative",
-        width: 350,
-        height: { height },
+        width: { xs: "100%", sm: 350 },
+        maxWidth: { xs: "100%", sm: 350 },
+        height: { xs: "auto", sm: height },
+        minHeight: 0,
         backgroundColor: "#F3E5D8",
         color: "#4A4A4A",
         fontFamily: "Poppins, sans-serif",
@@ -113,8 +115,8 @@ export const ProductCard = ({
       <Box
         sx={{
           position: "absolute",
-          top: 8,
-          right: 8,
+          top: { xs: 4, sm: 8 },
+          right: { xs: 4, sm: 8 },
           display: "flex",
           gap: 0.5,
           flexDirection: "column",
@@ -143,11 +145,16 @@ export const ProductCard = ({
             {onEdit && (
               <IconButton
                 aria-label="edit"
+                size="small"
                 onClick={onEdit}
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  p: { xs: 0.35, sm: 1 },
                   "&:hover": {
                     backgroundColor: "rgba(255, 255, 255, 1)",
+                  },
+                  "& .MuiSvgIcon-root": {
+                    fontSize: { xs: "1.1rem", sm: "1.5rem" },
                   },
                 }}
               >
@@ -157,11 +164,16 @@ export const ProductCard = ({
             {onDelete && (
               <IconButton
                 aria-label="delete"
+                size="small"
                 onClick={onDelete}
                 sx={{
                   backgroundColor: "rgba(255, 255, 255, 0.7)",
+                  p: { xs: 0.35, sm: 1 },
                   "&:hover": {
                     backgroundColor: "rgba(255, 255, 255, 1)",
+                  },
+                  "& .MuiSvgIcon-root": {
+                    fontSize: { xs: "1.1rem", sm: "1.5rem" },
                   },
                 }}
               >
@@ -178,27 +190,34 @@ export const ProductCard = ({
         sx={{
           width: "100%",
           height: "auto",
-          aspectRatio: "1 / 1",
-          // aspectRatio: isPurchased && purchasedProgress > 0 ? "1.2 / 1" : "1 / 1",
+          aspectRatio: { xs: "16 / 9", sm: "1 / 1" },
           objectFit: "cover",
           alignSelf: "center",
           borderRadius: "4px",
+          flexShrink: 0,
         }}
       />
-      <CardContent sx={{ padding: 2 }}>
+      <CardContent
+        sx={{
+          padding: { xs: 1.25, sm: 2 },
+          pt: { xs: 1.25, sm: 2 },
+          "&:last-child": { pb: { xs: 1.25, sm: 2 } },
+        }}
+      >
         <Typography
           variant="subtitle1"
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            fontSize: "1.2rem", // Reducido de 1.5rem a 1.2rem
+            fontSize: { xs: "1rem", sm: "1.2rem" },
             color: "#4A4A4A",
-            mb: 1,
+            mb: { xs: 0.75, sm: 1 },
             lineHeight: 1.3,
-            height: "3.2rem", // Altura fija para 2 líneas máximo
+            minHeight: { xs: "2.6rem", sm: "3.2rem" },
+            maxHeight: { xs: "2.6rem", sm: "3.2rem" },
             overflow: "hidden",
             display: "-webkit-box",
-            WebkitLineClamp: 2, // Máximo 2 líneas
+            WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
             textOverflow: "ellipsis",
           }}
@@ -250,8 +269,10 @@ export const ProductCard = ({
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: { xs: "stretch", sm: "center" },
+            gap: { xs: 1, sm: 0 },
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
@@ -260,7 +281,7 @@ export const ProductCard = ({
                 <Typography
                   sx={{
                     fontFamily: "Poppins, sans-serif",
-                    fontSize: "1.25rem",
+                    fontSize: { xs: "0.95rem", sm: "1.25rem" },
                     fontWeight: 400,
                     textDecoration: "line-through",
                     color: "#4A4A4A",
@@ -271,7 +292,7 @@ export const ProductCard = ({
                 <Typography
                   sx={{
                     fontFamily: "Poppins, sans-serif",
-                    fontSize: "1.75rem",
+                    fontSize: { xs: "1.25rem", sm: "1.75rem" },
                     fontWeight: 600,
                     color: "#D54848",
                   }}
@@ -283,7 +304,7 @@ export const ProductCard = ({
               <Typography
                 sx={{
                   fontFamily: "Poppins, sans-serif",
-                  fontSize: "1.75rem",
+                  fontSize: { xs: "1.25rem", sm: "1.75rem" },
                   fontWeight: 600,
                 }}
               >
@@ -344,6 +365,15 @@ export const ProductCard = ({
               onClick={isPurchased ? onViewCourse : onAddToCart}
               variant={isPurchased ? "secondary" : "primary"}
               disabled={isPurchased && !onViewCourse}
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                alignSelf: { xs: "stretch", sm: "auto" },
+                minHeight: { xs: 44, sm: 60 },
+                height: { xs: 44, sm: 60 },
+                fontSize: { xs: "0.95rem", sm: "18px" },
+                px: { xs: 1.5, sm: 3 },
+                py: { xs: 0.75, sm: 2 },
+              }}
             >
               {isPurchased ? "Ir a mi curso" : "Agregar al carrito"}
             </Button>

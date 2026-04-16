@@ -40,8 +40,10 @@ export const BlogCard = ({
   return (
     <Card
       sx={{
-        width: 350,
-        height: 500,
+        width: { xs: "100%", sm: 350 },
+        maxWidth: { xs: "100%", sm: 350 },
+        height: { xs: "auto", sm: 500 },
+        minHeight: 0,
         backgroundColor: "#D4AF80",
         borderRadius: 2,
         overflow: "hidden",
@@ -54,11 +56,14 @@ export const BlogCard = ({
         <Box
           sx={{
             position: "absolute",
-            top: 8,
-            right: 8,
+            top: { xs: 4, sm: 8 },
+            right: { xs: 4, sm: 8 },
             display: "flex",
             gap: 0.5,
             zIndex: 1,
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
+            maxWidth: "calc(100% - 8px)",
           }}
         >
           {isDraft && (
@@ -80,11 +85,16 @@ export const BlogCard = ({
           {onFavorite && (
             <IconButton
               aria-label="favorite"
+              size="small"
               onClick={onFavorite}
               sx={{
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
+                p: { xs: 0.35, sm: 1 },
                 "&:hover": {
                   backgroundColor: "rgba(255, 255, 255, 1)",
+                },
+                "& .MuiSvgIcon-root": {
+                  fontSize: { xs: "1.1rem", sm: "1.5rem" },
                 },
               }}
             >
@@ -94,11 +104,16 @@ export const BlogCard = ({
           {onEdit && (
             <IconButton
               aria-label="edit"
+              size="small"
               onClick={onEdit}
               sx={{
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
+                p: { xs: 0.35, sm: 1 },
                 "&:hover": {
                   backgroundColor: "rgba(255, 255, 255, 1)",
+                },
+                "& .MuiSvgIcon-root": {
+                  fontSize: { xs: "1.1rem", sm: "1.5rem" },
                 },
               }}
             >
@@ -108,11 +123,16 @@ export const BlogCard = ({
           {onDelete && (
             <IconButton
               aria-label="delete"
+              size="small"
               onClick={onDelete}
               sx={{
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
+                p: { xs: 0.35, sm: 1 },
                 "&:hover": {
                   backgroundColor: "#D54848",
+                },
+                "& .MuiSvgIcon-root": {
+                  fontSize: { xs: "1.1rem", sm: "1.5rem" },
                 },
               }}
             >
@@ -124,7 +144,8 @@ export const BlogCard = ({
       <Box
         sx={{
           width: "100%",
-          height: 200,
+          height: { xs: 150, sm: 200 },
+          flexShrink: 0,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -147,20 +168,21 @@ export const BlogCard = ({
         sx={{
           display: "flex",
           flexDirection: "column",
-          flexGrow: 1,
+          flexGrow: { xs: 0, sm: 1 },
           justifyContent: "space-between",
-          px: 2,
-          py: 2,
+          px: { xs: 1.25, sm: 2 },
+          py: { xs: 1.25, sm: 2 },
+          "&:last-child": { pb: { xs: 1.25, sm: 2 } },
         }}
       >
         <div>
           <Typography
             sx={{
               textAlign: "left",
-              fontSize: "1.1rem",
+              fontSize: { xs: "0.9rem", sm: "1.1rem" },
               color: "#7c6a58",
               fontFamily: "Playfair Display",
-              mb: 1,
+              mb: { xs: 0.5, sm: 1 },
             }}
           >
             {date}
@@ -170,10 +192,17 @@ export const BlogCard = ({
             sx={{
               fontFamily: "Playfair Display",
               fontWeight: 700,
-              fontSize: "1.75rem",
+              fontSize: { xs: "1.35rem", sm: "1.75rem" },
               color: "#4A4A4A",
-              mb: 1,
-              lineHeight: 1.3,
+              mb: { xs: 0.5, sm: 1 },
+              lineHeight: 1.25,
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              "@media (min-width: 600px)": {
+                WebkitLineClamp: 3,
+              },
             }}
           >
             {title}
@@ -182,15 +211,18 @@ export const BlogCard = ({
           <Typography
             sx={{
               fontFamily: "Playfair Display",
-              fontSize: "1.25rem",
+              fontSize: { xs: "1rem", sm: "1.25rem" },
               color: "#D54848",
               display: "-webkit-box",
-              WebkitLineClamp: 3,
+              WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "normal",
-              lineHeight: 1.4,
+              lineHeight: 1.35,
+              "@media (min-width: 600px)": {
+                WebkitLineClamp: 3,
+              },
             }}
           >
             {summary}
@@ -200,7 +232,16 @@ export const BlogCard = ({
         <Button
           onClick={onClick}
           variant="secondary"
-          sx={{ alignSelf: "flex-start", mt: 2 }}
+          sx={{
+            alignSelf: { xs: "stretch", sm: "flex-start" },
+            width: { xs: "100%", sm: "auto" },
+            mt: { xs: 1.25, sm: 2 },
+            minHeight: { xs: 44, sm: 60 },
+            height: { xs: 44, sm: 60 },
+            fontSize: { xs: "0.95rem", sm: "18px" },
+            px: { xs: 1.5, sm: 3 },
+            py: { xs: 0.75, sm: 2 },
+          }}
         >
           Seguir leyendo
         </Button>
